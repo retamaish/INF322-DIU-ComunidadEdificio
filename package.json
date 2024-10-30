@@ -1,0 +1,60 @@
+{
+  "name": "proyectocomunidadedificio",
+  "version": "0.1.0",
+  "private": true,
+  "main": "src/index.js",
+  "author": {
+    "name": "Pablo Antonio Retamales Jara",
+    "github_url": "https://github.com/doorkaz"
+  },
+  "contributors": [
+    {
+      "name": "Byron Isaias Prado Lavin",
+      "github_url": "https://github.com/ByronPrado"
+    },
+    {
+      "name": "Matías Israel Villaverde Poblete",
+      "github_url": "https://github.com/Bodhimat"
+    }
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.27.0"
+  },
+  "scripts": {
+    "prod": "webpack --mode=production",
+    "dev": "webpack serve --mode=development"
+  },
+  "eslintConfig": {
+    "extends": []
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.25.9",
+    "babel-loader": "^9.2.1",
+    "css-loader": "^7.1.2",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.6.3",
+    "mini-css-extract-plugin": "^2.9.1",
+    "sass": "^1.80.5",
+    "sass-loader": "^16.0.2",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.95.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.1.0"
+  }
+}
