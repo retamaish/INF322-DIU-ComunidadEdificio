@@ -1,8 +1,7 @@
 @use './Layout/index.scss' as Layout;
 @use './Login/index.scss' as Login;
 @use './typography/index.scss' as Typography;
-@use './form/index.scss' as Form;
-@use './ui/index.scss' as UI;
+@use './elements/index.scss' as Elements;
 
 html,
 body {
