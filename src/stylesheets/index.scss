@@ -1,6 +1,25 @@
+@use './Layout/index.scss' as Layout;
+@use './Login/index.scss' as Login;
+@use './typography/index.scss' as Typography;
+@use './form/index.scss' as Form;
+@use './ui/index.scss' as UI;
+
+html,
 body {
   margin: 0;
-  font-family: 'Helvetica Neue', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  width: 100%;
+  height: 100%;
+  color: white;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
     sans-serif;
   -webkit-font-smoothing: antialiased;
