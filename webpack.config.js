@@ -23,7 +23,8 @@ module.exports = (_, argv) => ({
   resolve: {
     extensions: ['*', '.js', '.jsx', '.scss'],
     alias: {
-      '@components': path.resolve(__dirname, 'src/components')
+      '@components': path.resolve(__dirname, 'src/components'),
+      '@pages': path.resolve(__dirname, 'src/pages')
     }
   },
   module: {

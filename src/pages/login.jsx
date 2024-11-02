@@ -1,5 +1,5 @@
 import React from 'react'
-import { H1, H2, P } from '@components'
+import { H1, H2, P, A } from '@components'
 
 export const Login = () => {
   return (
@@ -10,20 +10,20 @@ export const Login = () => {
       <form className='form'>
         {/* Correo */}
         <div className='form__group'>
-          <label className='form__label' for='email'>Correo electrónico</label>
+          <label className='form__label' htmlFor='email'>Correo electrónico</label>
           <input className='form__input' type='email' id='email' pattern='.+@example\.com' size='30' autoComplete={1} placeholder='johndoe@gmail.com' required />
         </div>
 
         {/* Contraseña */}
-        <div className='form__group' style={{ marginTop: '36px' }}>
-          <label className='form__label' for='password'>Contraseña</label>
+        <div className='form__group' style={{ marginTop: '24px' }}>
+          <label className='form__label' htmlFor='password'>Contraseña</label>
           <input className='form__input' type='password' id='password' name='password' placeholder='******' required />
         </div>
 
-        <button style={{ marginTop: '22px' }} type='submit' className='button button__submit'>Entrar</button>
+        <button style={{ marginTop: '24px' }} type='submit' className='button button__submit'>Entrar</button>
       </form>
-      <a>Olvidaste tu contraseña?</a>
-      <P>¿No tienes cuenta? <a>Regístrate</a></P>
+      <A href=''>Olvidaste tu contraseña?</A>
+      <P>¿No tienes cuenta? <A href=''>Regístrate</A></P>
     </div>
   )
 }
