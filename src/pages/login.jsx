@@ -20,7 +20,7 @@ export const Login = () => {
           <input className='form__input' type='password' id='password' name='password' placeholder='******' required />
         </div>
 
-        <button style={{ marginTop: '36px' }} type='submit' className='button button__submit'>Entrar</button>
+        <button style={{ marginTop: '22px' }} type='submit' className='button button__submit'>Entrar</button>
       </form>
       <a>Olvidaste tu contraseña?</a>
       <P>¿No tienes cuenta? <a>Regístrate</a></P>

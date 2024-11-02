@@ -2,8 +2,10 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
+const webpack = require('webpack')
 
 module.exports = (_, argv) => ({
+  mode: argv.mode || 'development',
   entry: './src/index.js',
   output: {
     filename: '[name].[contenthash].js',
@@ -15,7 +17,8 @@ module.exports = (_, argv) => ({
     }),
     new HtmlWebpackPlugin({
       title: 'ComunidadEdificio'
-    })
+    }),
+    new webpack.HotModuleReplacementPlugin()
   ],
   resolve: {
     extensions: ['*', '.js', '.jsx', '.scss'],
@@ -52,11 +55,7 @@ module.exports = (_, argv) => ({
   },
   devServer: {
     port: 8000,
-    hot: false,
-    liveReload: true,
-    watchFiles: {
-      paths: ['src/**/*']
-    },
+    hot: true,
     historyApiFallback: {
       index: '/'
     }
