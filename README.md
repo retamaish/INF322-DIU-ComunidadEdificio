@@ -2,12 +2,28 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Scripts disponibles
 
-In the project directory, you can run:
+En este directorio, se puede correr los siguientes scripts:
 
 ### `npm run dev`
-    For running development mode
+    Para correr el proyecto en modo desarrollo.
 
 ### `npm run prod`
-    For running production mode
+    Para correr el proyecto en modo producción.
+
+## Instrucciones para descarga e instalación
+
+En primer instancia, clonar el repositorio:
+
+### `git clone <URL>`
+    La URL la puede conseguir en el repositorio de GitHub
+    donde dice <Code>
+
+Debe correr el siguiente script dentro de la carpeta del proyecto:
+
+### `npm install`
+    Con este comando instalará todas las dependencias necesarias del proyecto.
+
+Luego, puede usar los scripts disponibles previamente mencionados.
+
