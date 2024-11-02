@@ -1,6 +1,7 @@
 /* eslint-disable max-lines-per-function */
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const path = require('path')
 
 module.exports = (_, argv) => ({
   entry: './src/index.js',
@@ -17,7 +18,10 @@ module.exports = (_, argv) => ({
     })
   ],
   resolve: {
-    extensions: ['*', '.js', '.jsx']
+    extensions: ['*', '.js', '.jsx', '.scss'],
+    alias: {
+      '@components': path.resolve(__dirname, 'src/components')
+    }
   },
   module: {
     rules: [
@@ -49,6 +53,10 @@ module.exports = (_, argv) => ({
   devServer: {
     port: 8000,
     hot: false,
+    liveReload: true,
+    watchFiles: {
+      paths: ['src/**/*']
+    },
     historyApiFallback: {
       index: '/'
     }
