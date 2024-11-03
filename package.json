@@ -35,7 +35,10 @@
       "plugin:react-hooks/recommended",
       "standard",
       "standard-jsx"
-    ]
+    ],
+    "rules": {
+      "import/export": "off"
+    }
   },
   "browserslist": {
     "production": [
