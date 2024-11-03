@@ -17,25 +17,26 @@ export const Solicitud = () => {
           {/* Espacio Quincho */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
             <img src={quincho} style={{ width: '100px', height: 'auto' }} />
+            <label style={{ marginLeft: '8px' }}>
+              <input type='radio' name='opcion' value='quincho' />
+            </label>
             <div>
               <H2 className='espacio__subtitle'>Quincho</H2>
               <p className='espacio__description'>Espacio con parrilla y mesón</p>
             </div>
-            <label style={{ marginLeft: '8px' }}>
-              <input type='radio' name='opcion' value='quincho' />
-            </label>
           </div>
 
           {/* Espacio Gimnasio */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
             <img src={gimnasio} style={{ width: '100px', height: 'auto' }} />
+            <label style={{ marginLeft: '8px' }}>
+              <input type='radio' name='opcion' value='gimnasio' />
+            </label>
             <div>
               <H2 className='espacio__subtitle'>Gimnasio</H2>
               <p className='espacio__description'>Sala con máquinas y pesas</p>
             </div>
-            <label style={{ marginLeft: '8px' }}>
-              <input type='radio' name='opcion' value='gimnasio' />
-            </label>
+            
           </div>
         </div>
   
