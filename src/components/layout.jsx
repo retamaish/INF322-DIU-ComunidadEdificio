@@ -1,10 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-import { Login, Home } from '@pages'
-import { Visita } from '../pages/inscribirVisita'
-import { Solicitud, UserData } from '../pages'
-import { AdminSubmit } from '../pages/admin'
+import { Login, Home, FAQ as FrequentlyAskedQuestions, Visita, Solicitud, UserData } from '@pages'
 
 const Layout = () => {
   return (
@@ -16,7 +13,7 @@ const Layout = () => {
             <Route path='/home' element={<Home />} />
             <Route path='/inscribirVisita' element={<Visita />} />
             <Route path='/espaciosComunes' element={<Solicitud />} />
-            <Route path='/admin' element={<AdminSubmit />} />
+            <Route path='/frequently-asked-questions' element={<FrequentlyAskedQuestions />} />
             <Route path='/user' element={<UserData />} />
           </Routes>
         </div>
