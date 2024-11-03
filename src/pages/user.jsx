@@ -1,23 +1,23 @@
-import React from 'react';
-import { H1, H2, P, A } from '@components';
-import userIMG from './img/user_default.jpg';
+import React from 'react'
+import { H1, P } from '@components'
+import ImageUser from '../assets/user_default.jpg'
 
 export const UserData = () => {
   return (
-    <div className='solicitudEspacio-container' style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}> 
+    <div className='solicitudEspacio-container' style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <H1>Datos del Usuario:</H1>
       <div className='all-container' style={{ display: 'flex', gap: '2rem', justifyContent: 'center', alignItems: 'center' }}>
         <div className='espacios-container'>
           {/* Foto del usuario */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
-            <img src={userIMG} alt='Usuario' style={{ width: '100px', height: 'auto' }} />
+            <img src={ImageUser} alt='Usuario' style={{ width: '100px', height: 'auto' }} />
           </div>
         </div>
 
         {/* Datos del usuario */}
         <div className='datos-user'>
           <form className='form'>
-            <div className='form__group' style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }} >
+            <div className='form__group' style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               {/* Contenedor para cada par de nombre y dato */}
               <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
                 <h3 className='dataName1'>Nombre:</h3>
@@ -41,7 +41,7 @@ export const UserData = () => {
             </div>
           </form>
         </div>
-      </div>      
+      </div>
     </div>
-  );
-};
+  )
+}

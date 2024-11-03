@@ -16,8 +16,8 @@ const Layout = () => {
             <Route path='/home' element={<Home />} />
             <Route path='/inscribirVisita' element={<Visita />} />
             <Route path='/espaciosComunes' element={<Solicitud />} />
-            <Route path='/admin' element = {<AdminSubmit />} />
-            <Route path='/user' element= {<UserData />}/>
+            <Route path='/admin' element={<AdminSubmit />} />
+            <Route path='/user' element={<UserData />} />
           </Routes>
         </div>
       </div>

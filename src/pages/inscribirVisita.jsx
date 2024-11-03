@@ -1,19 +1,19 @@
-import React from 'react';
-import { H1, H2, P, A } from '@components';
+import React from 'react'
+import { H2 } from '@components'
 
 export const Visita = () => {
   return (
     <div className='visitas_containerAll'>
-      <h1 style={{justifyContent:'center' }}>Inscribe tu Visita</h1>
+      <h1 style={{ justifyContent: 'center' }}>Inscribe tu Visita</h1>
       <div className='visitas-container' style={{ display: 'flex', gap: '2rem', justifyContent: 'center' }}>
-        {/*formulario ingreso nuevo visitante */}
+        {/* formulario ingreso nuevo visitante */}
         <div className='visita'>
           <H2 className='visita__subtitle'>Agendar Visitante</H2>
           <form className='form'>
             {/* Rut */}
             <div className='form__group'>
               <label className='form__label' htmlFor='rut'>Rut</label>
-              <input className='form__input' type='text' id='rut' pattern='^\d{7,8}-[0-9kK]$' size='30' autoComplete="on" placeholder='12345678-9' required />
+              <input className='form__input' type='text' id='rut' pattern='^\d{7,8}-[0-9kK]$' size='30' autoComplete='on' placeholder='12345678-9' required />
             </div>
             {/* Nombre */}
             <div className='form__group' style={{ marginTop: '24px' }}>
@@ -30,14 +30,14 @@ export const Visita = () => {
           </form>
         </div>
 
-        {/*VISITANTES REGISTRADOS*/}
+        {/* VISITANTES REGISTRADOS */}
         <div className='visita'>
           <H2 className='visita__subtitle'>Visitantes registrados:</H2>
           <form className='form'>
             <button style={{ marginTop: '24px' }} type='submit' className='button button__submit'>Volver al inicio</button>
-          </form>        
-        </div>      
+          </form>
+        </div>
       </div>
-    </div>    
-  );
+    </div>
+  )
 }
