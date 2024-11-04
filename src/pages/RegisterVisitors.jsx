@@ -1,8 +1,9 @@
 import React from 'react'
 import { H2 } from '@components'
-import { navigateTo } from '@utilities'
+import { useNavigate } from 'react-router-dom'
 
 export const RegisterVisitors = () => {
+  const navigate = useNavigate()
   return (
     <div className='register-visitors'>
       <h1 style={{ justifyContent: 'center' }}>Inscribe tu Visita</h1>
@@ -40,7 +41,7 @@ export const RegisterVisitors = () => {
               className='button button__submit'
               style={{ marginTop: '24px' }}
               type='submit'
-              onClick={navigateTo('/')}
+              onClick={() => navigate('/')}
             >
               Volver al inicio
             </button>

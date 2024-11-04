@@ -1,9 +1,10 @@
 import React from 'react'
 import { H1, P } from '@components'
-import { navigateTo } from '@utilities'
+import { useNavigate } from 'react-router-dom'
 import { IconBell, IconUser, IconMenu } from '@icons'
 
 export const Home = () => {
+  const navigate = useNavigate()
   return (
     <div className='home'>
       <div className='home__header'>
@@ -43,7 +44,7 @@ export const Home = () => {
       <div className='home__mid'>
         <H1 className='bold'>Reserva de espacio común</H1>
         <P>Revisa los espacios disponibles de tu condominio</P>
-        <button className='button button__submit' onClick={navigateTo('reservar-espacios-comunes')} style={{ width: '120px' }}>Reservar</button>
+        <button className='button button__submit' onClick={() => navigate('reservar-espacios-comunes')} style={{ width: '120px' }}>Reservar</button>
       </div>
 
       <hr />
@@ -53,14 +54,14 @@ export const Home = () => {
         <div className='home__bottom__visits'>
           <H1 className='bold'>Inscribe a tu visita</H1>
           <P>Registra a tu visita desde la comodidad de tu hogar</P>
-          <button className='button button__submit' onClick={navigateTo('inscribir-visitas')} style={{ width: '140px' }}>Inscribir visita</button>
+          <button className='button button__submit' onClick={() => navigate('inscribir-visitas')} style={{ width: '140px' }}>Inscribir visita</button>
         </div>
 
         {/* Sección Derecha */}
         <div className='home__bottom__faq'>
           <H1 className='bold'>Consultas</H1>
           <P>¿Debes contactar a tu administración? Hazlo acá</P>
-          <button className='button button__submit' onClick={navigateTo('preguntas-frecuentes')} style={{ width: '140px' }}>Contactar</button>
+          <button className='button button__submit' onClick={() => navigate('preguntas-frecuentes')} style={{ width: '140px' }}>Contactar</button>
         </div>
       </div>
     </div>

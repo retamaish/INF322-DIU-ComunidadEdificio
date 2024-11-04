@@ -1,9 +1,10 @@
 import React from 'react'
 import { H1, H2, P } from '@components'
-import { navigateTo } from '@utilities'
+import { useNavigate } from 'react-router-dom'
 
 export const FAQ = () => {
   // Frequently Asked Questions (FAQ)
+  const navigate = useNavigate()
   return (
     <div className='faq'>
       <H1 className='faq__title'>Preguntas frecuentes</H1>
@@ -29,7 +30,7 @@ export const FAQ = () => {
         />
         <div className='all-containter' style={{ display: 'flex', gap: '2rem', justifyContent: 'center' }}>
           <button style={{ marginTop: '24px' }} type='submit' className='button button__submit'>Enviar Consulta.</button>
-          <button style={{ marginTop: '24px' }} type='submit' className='button button__submit' onClick={navigateTo('/')}>Volver a inicio.</button>
+          <button style={{ marginTop: '24px' }} type='submit' className='button button__submit' onClick={() => navigate('/')}>Volver a inicio.</button>
         </div>
       </form>
     </div>

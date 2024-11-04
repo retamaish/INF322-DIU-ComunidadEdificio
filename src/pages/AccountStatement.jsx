@@ -1,7 +1,9 @@
 import React from 'react'
 import { IconDownload } from '@icons'
+import { useNavigate } from 'react-router-dom'
 
 export const AccountStatement = () => {
+  const navigate = useNavigate()
   const containerStyle = {
     color: '#fff',
     padding: '2rem',
@@ -128,7 +130,7 @@ export const AccountStatement = () => {
           </tr>
         </tbody>
       </table>
-      <button style={buttonStyle}>Volver a Inicio</button>
+      <button style={buttonStyle} onClick={() => navigate('/')}>Volver a Inicio</button>
     </div>
   )
 }

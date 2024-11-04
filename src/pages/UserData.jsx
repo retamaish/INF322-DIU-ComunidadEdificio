@@ -1,9 +1,10 @@
 import React from 'react'
 import { H1, H3, P } from '@components'
-import { navigateTo } from '@utilities'
+import { useNavigate } from 'react-router-dom'
 import ImageUser from '../assets/user_default.jpg'
 
 export const UserData = () => {
+  const navigate = useNavigate()
   return (
     <div className='user-data' style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <H1>Datos del Usuario:</H1>
@@ -36,7 +37,7 @@ export const UserData = () => {
 
             <div className='button-container' style={{ display: 'flex', gap: '2rem', marginTop: '24px', justifyContent: 'center' }}>
               <button type='submit' className='button button__submit'>Solicitar</button>
-              <button type='button' className='button button__submit' onClick={navigateTo('/')}>Volver al inicio</button>
+              <button type='button' className='button button__submit' onClick={() => navigate('/')}>Volver al inicio</button>
             </div>
           </form>
         </div>

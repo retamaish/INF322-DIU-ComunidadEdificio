@@ -25,9 +25,7 @@ module.exports = (_, argv) => ({
     alias: {
       '@components': path.resolve(__dirname, 'src/components'),
       '@pages': path.resolve(__dirname, 'src/pages'),
-      '@icons': path.resolve(__dirname, 'src/components/icons'),
-      '@utilities': path.resolve(__dirname, 'src/utilities')
-
+      '@icons': path.resolve(__dirname, 'src/components/icons')
     }
   },
   module: {

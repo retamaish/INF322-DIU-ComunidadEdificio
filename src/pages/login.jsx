@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { H1, H2, P, A } from '@components'
-import { navigateTo } from '@utilities'
+import { useNavigate } from 'react-router-dom'
 
 export const Login = () => {
+  const navigate = useNavigate()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
@@ -11,7 +12,7 @@ export const Login = () => {
     e.preventDefault()
 
     if (email && password) {
-      navigateTo('/')
+      navigate('/')
     } else {
       setError('Por favor, ingresa tus datos correctamente.')
     }

@@ -1,14 +1,17 @@
 import React from 'react'
 import { H1, H2 } from '@components'
-import { navigateTo } from '@utilities'
+import { useNavigate } from 'react-router-dom'
 import ImageBarbecue from '../assets/barbecue.jpg'
 import ImageGym from '../assets/gym.jpg'
 
 export const RequestCommonSpaces = () => {
+  const navigate = useNavigate()
+
   const hours = Array.from({ length: 15 }, (_, i) => { // 15 horas desde 8 hasta 22
     const hour = (i + 8).toString().padStart(2, '0') // Sumar 8 para iniciar desde las 8 AM
     return `${hour}:00`
   })
+
   return (
     <div className='request-space' style={{ displayjustifyContent: 'center' }}>
       <H1>Solicita tu espacio:</H1>
@@ -64,7 +67,7 @@ export const RequestCommonSpaces = () => {
               style={{ marginTop: '24px' }}
               type='submit'
               className='button button__submit'
-              onClick={navigateTo('/')}
+              onClick={() => navigate('/')}
             >
               Volver al inicio
             </button>
