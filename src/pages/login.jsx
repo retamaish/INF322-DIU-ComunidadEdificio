@@ -32,7 +32,7 @@ export const Login = () => {
             className='form__input'
             type='email'
             id='email'
-            pattern='.+@example\.com'
+            pattern='[^@\s]+@[^@\s]+\.[^@\s]+'
             size='30'
             autoComplete={1}
             placeholder='johndoe@gmail.com'
