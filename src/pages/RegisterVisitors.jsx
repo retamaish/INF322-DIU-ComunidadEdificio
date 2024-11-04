@@ -1,7 +1,7 @@
 import React from 'react'
 import { H2 } from '@components'
 
-export const Visita = () => {
+export const RegisterVisitors = () => {
   return (
     <div className='visitas_containerAll'>
       <h1 style={{ justifyContent: 'center' }}>Inscribe tu Visita</h1>

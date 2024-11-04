@@ -1,8 +1,15 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-import { Login, Home, FAQ as FrequentlyAskedQuestions, Visita, Solicitud, UserData } from '@pages'
-import {Vercartola} from '@pages'
+import {
+  Login,
+  Home,
+  FAQ as FrequentlyAskedQuestions,
+  RegisterVisitors,
+  RequestCommonSpaces,
+  User,
+  AccountStatement
+} from '@pages'
 
 const Layout = () => {
   return (
@@ -10,13 +17,13 @@ const Layout = () => {
       <div className='layout'>
         <div className='layout__page'>
           <Routes>
-            <Route path='/' element={<Login />} />
-            <Route path='/home' element={<Home />} />
-            <Route path='/inscribirVisita' element={<Visita />} />
-            <Route path='/espaciosComunes' element={<Solicitud />} />
-            <Route path='/frequently-asked-questions' element={<FrequentlyAskedQuestions />} />
-            <Route path='/user' element={<UserData />} />
-            <Route path="/cartola" element={<Vercartola />} />
+            <Route path='/iniciar-sesion' element={<Login />} />
+            <Route path='/' element={<Home />} />
+            <Route path='/inscribir-visitas' element={<RegisterVisitors />} />
+            <Route path='/reservar-espacios-comunes' element={<RequestCommonSpaces />} />
+            <Route path='/preguntas-frecuentes' element={<FrequentlyAskedQuestions />} />
+            <Route path='/usuario' element={<User />} />
+            <Route path='/cartola' element={<AccountStatement />} />
           </Routes>
         </div>
       </div>

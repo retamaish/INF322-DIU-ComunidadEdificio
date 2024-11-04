@@ -1,27 +1,27 @@
-import React from 'react';
-import { IconDownload } from '@icons';
+import React from 'react'
+import { IconDownload } from '@icons'
 
-export const Vercartola = () => {
+export const AccountStatement = () => {
   const containerStyle = {
     color: '#fff',
     padding: '2rem',
     borderRadius: '8px',
     maxWidth: '800px',
-    margin: '0 auto',
-  };
+    margin: '0 auto'
+  }
 
   const titleStyle = {
     fontSize: '2rem',
     fontWeight: 'bold',
     textAlign: 'center',
-    marginBottom: '1rem',
-  };
+    marginBottom: '1rem'
+  }
 
   const tableStyle = {
     width: '100%',
     borderCollapse: 'collapse',
-    marginBottom: '1.5rem',
-  };
+    marginBottom: '1.5rem'
+  }
 
   const thStyle = {
     padding: '1rem',
@@ -29,20 +29,20 @@ export const Vercartola = () => {
     backgroundColor: '#444',
     color: '#fff',
     borderBottom: '2px solid #555',
-    borderRight: '1px solid #555', // Línea de separación entre columnas
-  };
+    borderRight: '1px solid #555' // Línea de separación entre columnas
+  }
 
   const tdStyle = {
     padding: '1rem',
     borderBottom: '1px solid #555',
-    borderRight: '1px solid #555', // Línea de separación entre columnas
-  };
+    borderRight: '1px solid #555' // Línea de separación entre columnas
+  }
 
   const downloadStyle = {
     display: 'flex',
     justifyContent: 'flex-end',
-    marginBottom: '1rem',
-  };
+    marginBottom: '1rem'
+  }
 
   const buttonStyle = {
     backgroundColor: '#61677A',
@@ -50,8 +50,8 @@ export const Vercartola = () => {
     padding: '0.5rem 1rem',
     border: 'none',
     borderRadius: '4px',
-    cursor: 'pointer',
-  };
+    cursor: 'pointer'
+  }
 
   return (
     <div style={containerStyle}>
@@ -79,7 +79,7 @@ export const Vercartola = () => {
           <tr>
             <td style={tdStyle}>5/08/24</td>
             <td style={tdStyle}>120.000</td>
-            <td style={tdStyle}></td>
+            <td style={tdStyle} />
             <td style={tdStyle}>Gasto común, Agosto</td>
             <td style={tdStyle}>120.000</td>
             <td style={tdStyle}>
@@ -88,7 +88,7 @@ export const Vercartola = () => {
           </tr>
           <tr>
             <td style={tdStyle}>10/08/24</td>
-            <td style={tdStyle}></td>
+            <td style={tdStyle} />
             <td style={tdStyle}>50.000</td>
             <td style={tdStyle}>Pago transferencia</td>
             <td style={tdStyle}>70.000</td>
@@ -99,7 +99,7 @@ export const Vercartola = () => {
           <tr>
             <td style={tdStyle}>15/08/24</td>
             <td style={tdStyle}>70.000</td>
-            <td style={tdStyle}></td>
+            <td style={tdStyle} />
             <td style={tdStyle}>Gasto común, Septiembre</td>
             <td style={tdStyle}>140.000</td>
             <td style={tdStyle}>
@@ -108,7 +108,7 @@ export const Vercartola = () => {
           </tr>
           <tr>
             <td style={tdStyle}>20/08/24</td>
-            <td style={tdStyle}></td>
+            <td style={tdStyle} />
             <td style={tdStyle}>30.000</td>
             <td style={tdStyle}>Pago transferencia</td>
             <td style={tdStyle}>110.000</td>
@@ -119,7 +119,7 @@ export const Vercartola = () => {
           <tr>
             <td style={tdStyle}>25/08/24</td>
             <td style={tdStyle}>150.000</td>
-            <td style={tdStyle}></td>
+            <td style={tdStyle} />
             <td style={tdStyle}>Gasto común, Octubre</td>
             <td style={tdStyle}>260.000</td>
             <td style={tdStyle}>
@@ -130,5 +130,5 @@ export const Vercartola = () => {
       </table>
       <button style={buttonStyle}>Volver a Inicio</button>
     </div>
-  );
-};
+  )
+}

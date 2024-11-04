@@ -2,7 +2,7 @@ import React from 'react'
 import { H1, P } from '@components'
 import ImageUser from '../assets/user_default.jpg'
 
-export const UserData = () => {
+export const User = () => {
   return (
     <div className='solicitudEspacio-container' style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <H1>Datos del Usuario:</H1>

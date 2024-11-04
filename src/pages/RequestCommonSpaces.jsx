@@ -3,7 +3,7 @@ import { H1, H2 } from '@components'
 import ImageBarbecue from '../assets/barbecue.jpg'
 import ImageGym from '../assets/gym.jpg'
 
-export const Solicitud = () => {
+export const RequestCommonSpaces = () => {
   const hours = Array.from({ length: 15 }, (_, i) => { // 15 horas desde 8 hasta 22
     const hour = (i + 8).toString().padStart(2, '0') // Sumar 8 para iniciar desde las 8 AM
     return `${hour}:00`

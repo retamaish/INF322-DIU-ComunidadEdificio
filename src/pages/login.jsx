@@ -12,7 +12,7 @@ export const Login = () => {
     e.preventDefault()
 
     if (email && password) {
-      navigate('/home')
+      navigate('/')
     } else {
       setError('Por favor, ingresa tus datos correctamente.')
     }
