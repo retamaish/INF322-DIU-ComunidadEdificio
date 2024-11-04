@@ -24,15 +24,18 @@ export const Home = () => {
       <hr />
 
       <div className='home__top'>
-        <H1 className='bold' style={{ margin: 0 }}>Gastos comunes</H1>
-        <P style={{ marginTop: 12 }}>El monto total a pagar es de:</P>
-        <P className='text-5xl bold' style={{ margin: 0 }}>$ 123.456</P>
-        <P>+ $0 intereses</P>
+        <div>
+          <H1 className='bold' style={{ margin: 0 }}>Gastos comunes</H1>
+          <P style={{ marginTop: 12 }}>El monto total a pagar es de:</P>
+          <P className='text-4xl bold' style={{ margin: 0 }}>$ 123.456</P>
+          <P>+ $0 intereses</P>
 
-        <div className='home__top__buttons'>
-          <button className='button button__submit' style={{ width: '120px', marginRight: '10px' }}>Pagar</button>
-          <button className='button button__submit' style={{ width: '120px' }}>Ver detalle</button>
+          <div className='home__top__buttons'>
+            <button className='button button__submit' style={{ width: '120px', marginRight: '10px' }}>Pagar</button>
+            <button className='button button__submit' style={{ width: '120px' }}>Ver detalle</button>
+          </div>
         </div>
+
       </div>
 
       <hr />
