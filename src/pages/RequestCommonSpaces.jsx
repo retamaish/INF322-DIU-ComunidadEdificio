@@ -9,20 +9,22 @@ export const RequestCommonSpaces = () => {
     return `${hour}:00`
   })
   return (
-    <div className='solicitudEspacio-container' style={{ displayjustifyContent: 'center' }}>
+    <div className='request-space' style={{ displayjustifyContent: 'center' }}>
       <H1>Solicita tu espacio:</H1>
-      {/* formulario seleccion quincho */}
-      <div className='all-containter' style={{ display: 'flex', gap: '2rem', justifyContent: 'center' }}>
-        <div className='espacios-container'>
+
+      {/* Formulario de selección */}
+      <div className='request-space__form-container' style={{ display: 'flex', gap: '2rem', justifyContent: 'center' }}>
+        <div className='request-space__options'>
+
           {/* Espacio Quincho */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
             <img src={ImageBarbecue} style={{ width: '100px', height: 'auto' }} />
             <label style={{ marginLeft: '8px' }}>
               <input type='radio' name='opcion' value='quincho' />
             </label>
-            <div>
-              <H2 className='espacio__subtitle'>Quincho</H2>
-              <p className='espacio__description'>Espacio con parrilla y mesón</p>
+            <div className='request-space__details'>
+              <H2 className='request-space__subtitle'>Quincho</H2>
+              <p className='request-space__description'>Espacio con parrilla y mesón</p>
             </div>
           </div>
 
@@ -32,18 +34,18 @@ export const RequestCommonSpaces = () => {
             <label style={{ marginLeft: '8px' }}>
               <input type='radio' name='opcion' value='gimnasio' />
             </label>
-            <div>
-              <H2 className='espacio__subtitle'>Gimnasio</H2>
-              <p className='espacio__description'>Sala con máquinas y pesas</p>
+            <div className='request-space__details'>
+              <H2 className='request-space__subtitle'>Gimnasio</H2>
+              <p className='request-space__description'>Sala con máquinas y pesas</p>
             </div>
 
           </div>
         </div>
 
         {/* seleccion hora */}
-        <div className='Horas-disponibles' style={{ marginTop: '24px' }}>
+        <div className='request-space__time-selection' style={{ marginTop: '24px' }}>
+          {/* Lista desplegable de horas */}
           <form className='form'>
-            {/* Lista desplegable de horas */}
             <div className='form__group'>
               <label className='form__label' htmlFor='hour'>Selecciona una hora:</label>
               <select id='hour' name='hour' className='form__input' style={{ padding: '8px', width: '100%', marginTop: '8px' }}>
@@ -54,6 +56,8 @@ export const RequestCommonSpaces = () => {
                 ))}
               </select>
             </div>
+
+            {/* Botones */}
             <button style={{ marginTop: '24px' }} type='submit' className='button button__submit'>Solicitar</button>
             <button style={{ marginTop: '24px' }} type='submit' className='button button__submit'>Volver al inicio</button>
           </form>
