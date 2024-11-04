@@ -57,10 +57,10 @@ export const Login = () => {
           />
         </div>
 
-        <button style={{ marginTop: '24px' }} type='submit' className='button button__submit'>Entrar</button>
+        <button style={{ marginTop: '24px', width: '100%' }} type='submit' className='button button__submit'>Entrar</button>
       </form>
-      <A href=''>Olvidaste tu contraseña?</A>
-      <P>¿No tienes cuenta? <A href=''>Regístrate</A></P>
+      <A className='text-md' href=''>Olvidaste tu contraseña?</A>
+      <P className='text-md'>¿No tienes cuenta? <A href=''>Regístrate</A></P>
     </div>
   )
 }
