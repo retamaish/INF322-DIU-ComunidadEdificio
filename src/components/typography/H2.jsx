@@ -1,10 +1,9 @@
 import React from 'react'
 
-export const H2 = ({ children, className, fontSize = '36px' }) => {
+export const H2 = ({ children, className }) => {
   return (
     <h2
-      className={`h2 ${className || ''}`}
-      style={{ fontSize }}
+      className={`H2 ${className || ''}`}
     >
       {children}
     </h2>

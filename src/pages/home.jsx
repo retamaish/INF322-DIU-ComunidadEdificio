@@ -25,6 +25,7 @@ export const Home = () => {
       <div>
         <H1 className='bold'>Gastos comunes</H1>
         <P>El monto total a pagar es de:</P>
+        <P className='bold'>$123.456</P>
       </div>
     </div>
   )

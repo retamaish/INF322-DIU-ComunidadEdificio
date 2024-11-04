@@ -1,10 +1,9 @@
 import React from 'react'
 
-export const P = ({ children, className = '', fontSize = '24px' }) => {
+export const P = ({ children, className }) => {
   return (
     <p
-      className={`${className || ''}`}
-      style={{ fontSize }}
+      className={`P ${className || ''}`}
     >
       {children}
     </p>
