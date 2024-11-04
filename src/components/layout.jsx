@@ -2,6 +2,7 @@ import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import { Login, Home, FAQ as FrequentlyAskedQuestions, Visita, Solicitud, UserData } from '@pages'
+import {Vercartola} from '@pages'
 
 const Layout = () => {
   return (
@@ -15,6 +16,7 @@ const Layout = () => {
             <Route path='/espaciosComunes' element={<Solicitud />} />
             <Route path='/frequently-asked-questions' element={<FrequentlyAskedQuestions />} />
             <Route path='/user' element={<UserData />} />
+            <Route path="/cartola" element={<Vercartola />} />
           </Routes>
         </div>
       </div>
