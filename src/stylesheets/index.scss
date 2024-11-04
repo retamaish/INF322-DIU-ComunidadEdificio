@@ -1,3 +1,4 @@
+@use './normalize/index.scss' as NormalizeSCSS;
 @use './Layout/index.scss' as Layout;
 @use './Login/index.scss' as Login;
 @use './utilities/index.scss' as Utilities;
