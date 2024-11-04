@@ -7,7 +7,7 @@ import {
   FAQ as FrequentlyAskedQuestions,
   RegisterVisitors,
   RequestCommonSpaces,
-  User,
+  UserData,
   AccountStatement
 } from '@pages'
 
@@ -22,7 +22,7 @@ const Layout = () => {
             <Route path='/inscribir-visitas' element={<RegisterVisitors />} />
             <Route path='/reservar-espacios-comunes' element={<RequestCommonSpaces />} />
             <Route path='/preguntas-frecuentes' element={<FrequentlyAskedQuestions />} />
-            <Route path='/usuario' element={<User />} />
+            <Route path='/usuario' element={<UserData />} />
             <Route path='/cartola' element={<AccountStatement />} />
           </Routes>
         </div>
