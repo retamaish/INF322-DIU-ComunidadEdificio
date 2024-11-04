@@ -1,4 +1,5 @@
 @use './home.scss';
-@use './home__header.scss';
-@use './home__header__address.scss';
-@use './home__header__icons.scss'
+@use './header/index.scss' as Header;
+@use './top/index.scss' as Top-section;
+@use './mid/index.scss' as Mid-section;
+@use './bottom/index.scss' as Bottom-section;
