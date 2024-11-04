@@ -1,5 +1,6 @@
 import React from 'react'
 import { H1, H2, P } from '@components'
+import { navigateTo } from '@utilities'
 
 export const FAQ = () => {
   // Frequently Asked Questions (FAQ)
@@ -28,7 +29,7 @@ export const FAQ = () => {
         />
         <div className='all-containter' style={{ display: 'flex', gap: '2rem', justifyContent: 'center' }}>
           <button style={{ marginTop: '24px' }} type='submit' className='button button__submit'>Enviar Consulta.</button>
-          <button style={{ marginTop: '24px' }} type='submit' className='button button__submit'>Volver a inicio.</button>
+          <button style={{ marginTop: '24px' }} type='submit' className='button button__submit' onClick={navigateTo('/')}>Volver a inicio.</button>
         </div>
       </form>
     </div>

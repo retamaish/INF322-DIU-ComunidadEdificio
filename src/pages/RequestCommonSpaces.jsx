@@ -1,5 +1,6 @@
 import React from 'react'
 import { H1, H2 } from '@components'
+import { navigateTo } from '@utilities'
 import ImageBarbecue from '../assets/barbecue.jpg'
 import ImageGym from '../assets/gym.jpg'
 
@@ -59,7 +60,14 @@ export const RequestCommonSpaces = () => {
 
             {/* Botones */}
             <button style={{ marginTop: '24px' }} type='submit' className='button button__submit'>Solicitar</button>
-            <button style={{ marginTop: '24px' }} type='submit' className='button button__submit'>Volver al inicio</button>
+            <button
+              style={{ marginTop: '24px' }}
+              type='submit'
+              className='button button__submit'
+              onClick={navigateTo('/')}
+            >
+              Volver al inicio
+            </button>
           </form>
         </div>
       </div>

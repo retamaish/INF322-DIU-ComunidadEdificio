@@ -1,5 +1,6 @@
 import React from 'react'
 import { H1, H3, P } from '@components'
+import { navigateTo } from '@utilities'
 import ImageUser from '../assets/user_default.jpg'
 
 export const UserData = () => {
@@ -35,7 +36,7 @@ export const UserData = () => {
 
             <div className='button-container' style={{ display: 'flex', gap: '2rem', marginTop: '24px', justifyContent: 'center' }}>
               <button type='submit' className='button button__submit'>Solicitar</button>
-              <button type='button' className='button button__submit'>Volver al inicio</button>
+              <button type='button' className='button button__submit' onClick={navigateTo('/')}>Volver al inicio</button>
             </div>
           </form>
         </div>

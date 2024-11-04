@@ -1,5 +1,6 @@
 import React from 'react'
 import { H2 } from '@components'
+import { navigateTo } from '@utilities'
 
 export const RegisterVisitors = () => {
   return (
@@ -35,7 +36,14 @@ export const RegisterVisitors = () => {
         <div className='visitors'>
           <H2 className='visitors__subtitle'>Visitantes registrados:</H2>
           <form className='form'>
-            <button style={{ marginTop: '24px' }} type='submit' className='button button__submit'>Volver al inicio</button>
+            <button
+              className='button button__submit'
+              style={{ marginTop: '24px' }}
+              type='submit'
+              onClick={navigateTo('/')}
+            >
+              Volver al inicio
+            </button>
           </form>
         </div>
       </div>
