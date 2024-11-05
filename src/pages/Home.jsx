@@ -1,10 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { H1, P } from '@components'
 import { useNavigate } from 'react-router-dom'
 import { IconBell, IconUser, IconMenu } from '@icons'
 
 export const Home = () => {
   const navigate = useNavigate()
+  const [menuOpen, setMenuOpen] = useState(false)
+
+  const handleMenuClick = () => {
+    setMenuOpen(!menuOpen)
+  }
+
+  const handleNavigate = (path) => {
+    navigate(path)
+    setMenuOpen(false) // Cierra el menú al seleccionar una opción
+  }
+
   return (
     <div className='home'>
       <div className='home__header'>
@@ -22,8 +33,26 @@ export const Home = () => {
           <div onClick={() => navigate('/usuario')} style={{ cursor: 'pointer' }}>
             <IconUser />
           </div>
-          <div onClick={() => alert('Menú')} style={{ cursor: 'pointer' }}>
+          <div onClick={handleMenuClick} style={{ cursor: 'pointer', position: 'relative' }}>
             <IconMenu />
+            {menuOpen && (
+              <ul className='menu-dropdown' style={{
+                position: 'absolute', 
+                top: '100%', 
+                right: 0, 
+                backgroundColor: 'grey', 
+                boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
+                padding: '10px',
+                width:'120px',
+                listStyle: 'none',
+                margin: 0
+              }}>
+                <li onClick={() => handleNavigate('/usuario')} style={{ padding: '8px', cursor: 'pointer'}}>Datos Usuario</li>
+                <li onClick={() => handleNavigate('/cartola')} style={{ padding: '8px', cursor: 'pointer'}}>Cartola</li>
+                <li onClick={() => handleNavigate('/inscribir-visitas')} style={{ padding: '8px', cursor: 'pointer'}}>Visitas</li>
+                <li onClick={() => handleNavigate('/iniciar-sesion')} style={{ padding: '8px', cursor: 'pointer',color:'red'}}>Cerrar Sesion</li>
+              </ul>
+            )}
           </div>
         </div>
       </div>
