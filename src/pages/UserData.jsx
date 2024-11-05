@@ -36,7 +36,6 @@ export const UserData = () => {
             </div>
 
             <div className='button-container' style={{ display: 'flex', gap: '2rem', marginTop: '24px', justifyContent: 'center' }}>
-              <button type='submit' className='button button__submit'>Solicitar</button>
               <button type='button' className='button button__submit' onClick={() => navigate('/')}>Volver al inicio</button>
             </div>
           </form>
