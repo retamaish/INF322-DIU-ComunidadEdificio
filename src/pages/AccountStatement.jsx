@@ -1,136 +1,99 @@
-import React from 'react'
-import { IconDownload } from '@icons'
-import { useNavigate } from 'react-router-dom'
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { IconDownload } from '@icons';
 
 export const AccountStatement = () => {
-  const navigate = useNavigate()
-  const containerStyle = {
-    color: '#fff',
-    padding: '2rem',
-    borderRadius: '8px',
-    maxWidth: '800px',
-    margin: '0 auto'
-  }
+  const navigate = useNavigate();
 
-  const titleStyle = {
-    fontSize: '2rem',
-    fontWeight: 'bold',
-    textAlign: 'center',
-    marginBottom: '1rem'
-  }
-
-  const tableStyle = {
-    width: '100%',
-    borderCollapse: 'collapse',
-    marginBottom: '1.5rem'
-  }
-
-  const thStyle = {
-    padding: '1rem',
-    textAlign: 'left',
-    backgroundColor: '#444',
-    color: '#fff',
-    borderBottom: '2px solid #555',
-    borderRight: '1px solid #555' // Línea de separación entre columnas
-  }
-
-  const tdStyle = {
-    padding: '1rem',
-    borderBottom: '1px solid #555',
-    borderRight: '1px solid #555' // Línea de separación entre columnas
-  }
-
-  const downloadStyle = {
-    display: 'flex',
-    justifyContent: 'flex-end',
-    marginBottom: '1rem'
-  }
-
-  const buttonStyle = {
-    backgroundColor: '#61677A',
-    color: '#fff',
-    padding: '0.5rem 1rem',
-    border: 'none',
-    borderRadius: '4px',
-    cursor: 'pointer'
-  }
+  const handleDownload = (type) => {
+    alert(`Descarga realizada: ${type}`);
+  };
 
   return (
-    <div style={containerStyle}>
-      <h1 style={titleStyle}>Cartola</h1>
-      <div style={downloadStyle}>
-        <button style={buttonStyle}>
-          Descargar PDF <IconDownload />
+    <div className="cartola-container">
+      <h1 className="cartola-title">Cartola</h1>
+      <div className="download-buttons">
+        <button
+          className="download-button"
+          onClick={() => handleDownload("PDF")}
+        >
+          Descargar PDF <IconDownload className="icon" />
         </button>
-        <button style={{ ...buttonStyle, marginLeft: '1rem' }}>
-          Descargar Excel <IconDownload />
+        <button
+          className="download-button"
+          onClick={() => handleDownload("Excel")}
+        >
+          Descargar Excel <IconDownload className="icon" />
         </button>
       </div>
-      <table style={tableStyle}>
+      <table className="cartola-table">
         <thead>
           <tr>
-            <th style={thStyle}>Fecha Ingreso</th>
-            <th style={thStyle}>Cargo</th>
-            <th style={thStyle}>Abono</th>
-            <th style={thStyle}>Descripción</th>
-            <th style={thStyle}>Saldo</th>
-            <th style={thStyle}>Documento</th>
+            <th>Fecha Ingreso</th>
+            <th>Cargo</th>
+            <th>Abono</th>
+            <th>Descripción</th>
+            <th>Saldo</th>
+            <th>Documento</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td style={tdStyle}>5/08/24</td>
-            <td style={tdStyle}>120.000</td>
-            <td style={tdStyle} />
-            <td style={tdStyle}>Gasto común, Agosto</td>
-            <td style={tdStyle}>120.000</td>
-            <td style={tdStyle}>
-              <IconDownload />
+            <td>5/08/24</td>
+            <td>120.000</td>
+            <td></td>
+            <td>Gasto común, Agosto</td>
+            <td>120.000</td>
+            <td className="document-icon-cell">
+              <IconDownload className="icon" aria-label="Descargar Documento" />
             </td>
           </tr>
           <tr>
-            <td style={tdStyle}>10/08/24</td>
-            <td style={tdStyle} />
-            <td style={tdStyle}>50.000</td>
-            <td style={tdStyle}>Pago transferencia</td>
-            <td style={tdStyle}>70.000</td>
-            <td style={tdStyle}>
-              <IconDownload />
+            <td>5/08/24</td>
+            <td>120.000</td>
+            <td></td>
+            <td>Gasto común, Agosto</td>
+            <td>120.000</td>
+            <td className="document-icon-cell">
+              <IconDownload className="icon" aria-label="Descargar Documento" />
             </td>
           </tr>
           <tr>
-            <td style={tdStyle}>15/08/24</td>
-            <td style={tdStyle}>70.000</td>
-            <td style={tdStyle} />
-            <td style={tdStyle}>Gasto común, Septiembre</td>
-            <td style={tdStyle}>140.000</td>
-            <td style={tdStyle}>
-              <IconDownload />
+            <td>5/08/24</td>
+            <td>120.000</td>
+            <td></td>
+            <td>Gasto común, Agosto</td>
+            <td>120.000</td>
+            <td className="document-icon-cell">
+              <IconDownload className="icon" aria-label="Descargar Documento" />
             </td>
           </tr>
           <tr>
-            <td style={tdStyle}>20/08/24</td>
-            <td style={tdStyle} />
-            <td style={tdStyle}>30.000</td>
-            <td style={tdStyle}>Pago transferencia</td>
-            <td style={tdStyle}>110.000</td>
-            <td style={tdStyle}>
-              <IconDownload />
+            <td>5/08/24</td>
+            <td>120.000</td>
+            <td></td>
+            <td>Gasto común, Agosto</td>
+            <td>120.000</td>
+            <td className="document-icon-cell">
+              <IconDownload className="icon" aria-label="Descargar Documento" />
             </td>
           </tr>
           <tr>
-            <td style={tdStyle}>25/08/24</td>
-            <td style={tdStyle}>150.000</td>
-            <td style={tdStyle} />
-            <td style={tdStyle}>Gasto común, Octubre</td>
-            <td style={tdStyle}>260.000</td>
-            <td style={tdStyle}>
-              <IconDownload />
+            <td>5/08/24</td>
+            <td>120.000</td>
+            <td></td>
+            <td>Gasto común, Agosto</td>
+            <td>120.000</td>
+            <td className="document-icon-cell">
+              <IconDownload className="icon" aria-label="Descargar Documento" />
             </td>
           </tr>
         </tbody>
       </table>
-      <button style={buttonStyle} onClick={() => navigate('/')}>Volver a Inicio</button>
+      <button className="back-button" onClick={() => navigate("/home")}>
+        Volver a Inicio
+      </button>
     </div>
-  )
-}
+  );
+};
+
