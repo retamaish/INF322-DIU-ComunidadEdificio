@@ -33,7 +33,7 @@ export const Home = () => {
 
           <div className='home__top__buttons'>
             <button className='button button__submit' style={{ width: '120px', marginRight: '10px' }}>Pagar</button>
-            <button className='button button__submit' style={{ width: '120px' }}>Ver detalle</button>
+            <button className='button button__submit' style={{ width: '120px' }} onClick={() => navigate("/cartola")} >Ver detalle</button >
           </div>
         </div>
 
