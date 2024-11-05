@@ -7,13 +7,12 @@ import ImageGym from '../assets/gym.jpg'
 export const RequestCommonSpaces = () => {
   const navigate = useNavigate()
   const [commonSpace, setCommonSpace] = useState('')
+  const [date, setDate] = useState('')
   const [hour, setHour] = useState('')
 
-  // Definimos las horas y las horas disponibles para habilitar/deshabilitar
   const hours = Array.from({ length: 15 }, (_, i) => {
-    const first = (i + 8).toString().padStart(2, '0') // 15 horas desde las 08:00
+    const first = (i + 8).toString().padStart(2, '0')
     const end = (i + 10).toString().padStart(2, '0')
-
     return `${first}:00-${end}:00`
   })
 
@@ -21,30 +20,28 @@ export const RequestCommonSpaces = () => {
   const availableHoursGym = ['14:00-16:00', '18:00-20:00']
 
   const getAvailableHours = (commonSpace) => {
-    if (commonSpace === 'bbq') {
-      return availableHoursBBQ
-    } else if (commonSpace === 'gym') {
-      return availableHoursGym
-    }
-
+    if (commonSpace === 'bbq') return availableHoursBBQ
+    else if (commonSpace === 'gym') return availableHoursGym
     return ['Seleccione un espacio común']
   }
-  const handleCommonSpaceClicked = (value) => {
-    const selectedCommonSpace = value
-    setCommonSpace(selectedCommonSpace)
 
-    const availableHours = getAvailableHours(selectedCommonSpace)
+  const handleCommonSpaceClicked = (value) => {
+    setCommonSpace(value)
+    const availableHours = getAvailableHours(value)
     setHour(availableHours.length > 0 ? availableHours[0] : '')
   }
 
   const handleSubmit = () => {
-    window.alert(`Espacio Reservado con exito. ${commonSpace}`)
+    if (date && hour) {
+      window.alert(`Espacio reservado con éxito: ${commonSpace} el ${date} a las ${hour}`)
+    } else {
+      window.alert('Por favor, selecciona una fecha y una hora')
+    }
   }
 
   return (
     <div className='request-space' style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <H1>Solicita tu espacio:</H1>
-      {/* Formulario de selección */}
       <div className='request-space__form-container' style={{ display: 'flex', gap: '2rem', justifyContent: 'center' }}>
         <div className='request-space__options'>
 
@@ -52,7 +49,7 @@ export const RequestCommonSpaces = () => {
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
             <img src={ImageBarbecue} style={{ width: '100px', height: 'auto' }} />
             <label style={{ marginLeft: '8px' }}>
-              <input type='radio' name='opcion' value='bbq' onChange={(e) => handleCommonSpaceClicked(e.target.value)} />
+              <input type='radio' name='option' value='bbq' onChange={(e) => handleCommonSpaceClicked(e.target.value)} />
             </label>
             <div className='request-space__details'>
               <H2 className='request-space__subtitle'>Quincho</H2>
@@ -64,7 +61,7 @@ export const RequestCommonSpaces = () => {
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
             <img src={ImageGym} style={{ width: '100px', height: 'auto' }} />
             <label style={{ marginLeft: '8px' }}>
-              <input type='radio' name='opcion' value='gym' onChange={(e) => handleCommonSpaceClicked(e.target.value)} />
+              <input type='radio' name='option' value='gym' onChange={(e) => handleCommonSpaceClicked(e.target.value)} />
             </label>
             <div className='request-space__details'>
               <H2 className='request-space__subtitle'>Gimnasio</H2>
@@ -73,10 +70,26 @@ export const RequestCommonSpaces = () => {
           </div>
         </div>
 
-        {/* seleccion hora */}
+        {/* Selección de Fecha y Hora */}
         <div className='request-space__time-selection' style={{ marginTop: '24px' }}>
-          <form className='form'>
+          <form className='form' onSubmit={(e) => e.preventDefault()}>
+            
+            {/* Selección de Fecha */}
             <div className='form__group'>
+              <label className='form__label' htmlFor='date'>Selecciona una fecha:</label>
+              <input
+                type='date'
+                id='date'
+                name='date'
+                className='form__input'
+                style={{ padding: '8px', width: '100%', marginTop: '8px' }}
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+              />
+            </div>
+
+            {/* Selección de Hora */}
+            <div className='form__group' style={{ marginTop: '16px' }}>
               <label className='form__label' htmlFor='hour'>Selecciona una hora:</label>
               <select
                 id='hour'
@@ -84,21 +97,21 @@ export const RequestCommonSpaces = () => {
                 className='form__input'
                 style={{ padding: '8px', width: '100%', marginTop: '8px' }}
                 value={hour}
-                disabled={commonSpace === ''}
+                disabled={!commonSpace || !date}
                 onChange={(e) => setHour(e.target.value)}
               >
-                {commonSpace
-                  ? (hours.map((hour, index) => (
+                {commonSpace && date
+                  ? hours.map((hour, index) => (
                     <option
                       key={index}
                       value={hour}
-                      disabled={!getAvailableHours(commonSpace).includes(hour)} // Deshabilita la opción si no está en availableHours
+                      disabled={!getAvailableHours(commonSpace).includes(hour)}
                       style={{ color: getAvailableHours(commonSpace).includes(hour) ? 'black' : 'gray' }}
                     >
                       {hour}
                     </option>
-                    )))
-                  : <option>Selecciona un espacio común</option>}
+                  ))
+                  : <option>Selecciona un espacio común y fecha</option>}
               </select>
             </div>
 
@@ -108,7 +121,8 @@ export const RequestCommonSpaces = () => {
                 type='submit'
                 className='button button__submit'
                 onClick={() => handleSubmit()}
-              >Solicitar
+              >
+                Solicitar
               </button>
 
               <button
@@ -125,3 +139,4 @@ export const RequestCommonSpaces = () => {
     </div>
   )
 }
+
