@@ -7,13 +7,14 @@
 @use './home/index.scss' as Home;
 @use './accountstatement/index.scss' as accountstatement;
 @use './menu-dropdown/index.scss' as MenuDropdown;
+@use './visitors/index.scss' as Visitors;
 
 html,
 body {
   margin: 0;
   width: 100%;
   color: white;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 input {

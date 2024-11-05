@@ -1,0 +1,40 @@
+.visitor {
+    &-item {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 15px;
+        padding: 10px;
+        background-color: #49454F;
+        border-radius: 16px;
+    }
+
+    &-initial {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px; 
+        height: 40px; 
+        border-radius: 50%; 
+        background-color: #EADDFF; 
+        color: #21005D;
+        font-size: 16px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin-right: 12px;
+    }
+
+    &-details {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: start;
+    }
+
+    &-remove-button {
+        margin-left: auto;
+        color: #ffffff;
+        background-color: #49454F;
+        border: 0;
+        font-size: 18px;
+    }
+}

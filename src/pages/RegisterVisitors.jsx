@@ -1,12 +1,39 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { H1, H2 } from '@components'
 import { useNavigate } from 'react-router-dom'
 
 export const RegisterVisitors = () => {
   const navigate = useNavigate()
+
+  const [visitorFirstName, setVisitorFirstName] = useState('')
+  const [visitorLastName, setVisitorLastName] = useState('')
+
+  const [visitors, setVisitors] = useState(
+    [
+      { index: 1, firstName: 'RAFAEL', lastName: 'DONOSO ECHEVERRIA' },
+      { index: 2, firstName: 'SANDRA', lastName: 'DONOSO ECHEVERRIA' },
+      { index: 3, firstName: 'WALTER', lastName: 'DONOSO BERNAL' }
+    ]
+  )
+
+  const [index, setIndex] = useState(4)
+
   const handleRegister = () => {
     window.alert('Visitante registrado con exito.')
+    setVisitors([
+      ...visitors,
+      { index, firstName: visitorFirstName, lastName: visitorLastName }]
+    )
+
+    setIndex((index) => index + 1)
   }
+
+  const handleRemove = (index) => {
+    setVisitors((prevVisitors) =>
+      prevVisitors.filter((visitor) => visitor.index !== index)
+    )
+  }
+
   return (
     <div className='register-visitors' style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
       <H1>Inscribe tu Visita</H1>
@@ -24,16 +51,15 @@ export const RegisterVisitors = () => {
             {/* Nombre */}
             <div className='form__group' style={{ marginTop: '24px' }}>
               <label className='form__label' htmlFor='name'>Nombre</label>
-              <input className='form__input' type='text' id='name' name='name' placeholder='Nombre' required />
+              <input className='form__input' type='text' id='name' name='name' placeholder='Nombre' onChange={(e) => setVisitorFirstName(e.target.value)} required />
             </div>
             {/* Apellidos */}
             <div className='form__group' style={{ marginTop: '24px' }}>
               <label className='form__label' htmlFor='lastName'>Apellidos</label>
-              <input className='form__input' type='text' id='lastName' name='lastName' placeholder='Apellidos' required />
+              <input className='form__input' type='text' id='lastName' name='lastName' placeholder='Apellidos' onChange={(e) => setVisitorLastName(e.target.value)} required />
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column' }}>
-              <label><input style={{ marginTop: '24px' }} type='checkbox' name='option' value='option1' />¿Guardar como visitante frecuente?</label>
               <button
                 style={{ marginTop: '24px', width: '100%' }}
                 type='submit'
@@ -48,6 +74,21 @@ export const RegisterVisitors = () => {
         {/* VISITANTES REGISTRADOS */}
         <div className='visitors'>
           <H2 className='visitors__subtitle'>Visitantes registrados:</H2>
+          {visitors.map((visitor, index) => (
+            <div key={index} className='visitor-item'>
+              <div className='visitor-details'>
+                <span className='visitor-initial'>
+                  {visitor.firstName.charAt(0)}
+                </span>
+                <span className='visitor-name'>
+                  {`${visitor.firstName} ${visitor.lastName}`}
+                </span>
+              </div>
+              <button className='visitor-remove-button' onClick={() => handleRemove(visitor.index)}>
+                X
+              </button>
+            </div>
+          ))}
           <form className='form'>
             <button
               className='button button__submit'
