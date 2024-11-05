@@ -89,7 +89,7 @@ export const AccountStatement = () => {
         >
           Descargar Excel <IconDownload className='icon' />
         </button>
-        <button className='download-button' onClick={() => navigate('/iniciar-sesion')}>
+        <button className='download-button' onClick={() => navigate('/')}>
           Volver a Inicio
         </button>
       </div>

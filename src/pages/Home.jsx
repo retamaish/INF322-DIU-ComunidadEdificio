@@ -15,10 +15,16 @@ export const Home = () => {
             Comunidad Santa María
           </P>
         </div>
-        <div className='home__header__icons'>
-          <IconBell />
-          <IconUser />
-          <IconMenu />
+        <div className='home__header__icons' style={{ display: 'flex', gap: '1rem' }}>
+          <div onClick={() => alert('Notificaciones')} style={{ cursor: 'pointer' }}>
+            <IconBell />
+          </div>
+          <div onClick={() => navigate('/usuario')} style={{ cursor: 'pointer' }}>
+            <IconUser />
+          </div>
+          <div onClick={() => alert('Menú')} style={{ cursor: 'pointer' }}>
+            <IconMenu />
+          </div>
         </div>
       </div>
 

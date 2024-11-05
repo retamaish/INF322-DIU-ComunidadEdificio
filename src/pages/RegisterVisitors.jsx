@@ -4,6 +4,9 @@ import { useNavigate } from 'react-router-dom'
 
 export const RegisterVisitors = () => {
   const navigate = useNavigate()
+  const handleRegister = () => {
+    alert('Visitante registrado con exito.')
+  }
   return (
     <div className='register-visitors' style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
       <H1>Inscribe tu Visita</H1>
@@ -31,7 +34,11 @@ export const RegisterVisitors = () => {
 
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               <label><input style={{ marginTop: '24px' }} type='checkbox' name='option' value='option1' />¿Guardar como visitante frecuente?</label>
-              <button style={{ marginTop: '24px', width: '100%' }} type='submit' className='button button__submit'>Registrar</button>
+              <button 
+              style={{ marginTop: '24px', width: '100%' }} 
+              type='submit' 
+              className='button button__submit'
+              onClick={()=>handleRegister()}>Registrar</button>
             </div>
           </form>
         </div>
