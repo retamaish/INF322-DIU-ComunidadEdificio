@@ -1,13 +1,13 @@
 import React from 'react'
-import { H2 } from '@components'
+import { H1, H2 } from '@components'
 import { useNavigate } from 'react-router-dom'
 
 export const RegisterVisitors = () => {
   const navigate = useNavigate()
   return (
-    <div className='register-visitors'>
-      <h1 style={{ justifyContent: 'center' }}>Inscribe tu Visita</h1>
-      <div className='register-visitors__container' style={{ display: 'flex', gap: '2rem', justifyContent: 'center' }}>
+    <div className='register-visitors' style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
+      <H1>Inscribe tu Visita</H1>
+      <div className='register-visitors__container' style={{ display: 'flex', gap: '2rem' }}>
         {/* formulario ingreso nuevo visitante */}
         <div className='register-visitors'>
           <H2 className='register-visitors__subtitle'>Agendar Visitante</H2>
@@ -31,7 +31,7 @@ export const RegisterVisitors = () => {
 
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               <label><input style={{ marginTop: '24px' }} type='checkbox' name='option' value='option1' />¿Guardar como visitante frecuente?</label>
-              <button style={{ marginTop: '24px' }} type='submit' className='button button__submit'>Registrar</button>
+              <button style={{ marginTop: '24px', width: '100%' }} type='submit' className='button button__submit'>Registrar</button>
             </div>
           </form>
         </div>
@@ -42,7 +42,7 @@ export const RegisterVisitors = () => {
           <form className='form'>
             <button
               className='button button__submit'
-              style={{ marginTop: '24px' }}
+              style={{ marginTop: '24px', width: '100%' }}
               type='submit'
               onClick={() => navigate('/')}
             >
