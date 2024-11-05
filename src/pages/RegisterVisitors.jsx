@@ -28,8 +28,11 @@ export const RegisterVisitors = () => {
               <label className='form__label' htmlFor='lastName'>Apellidos</label>
               <input className='form__input' type='text' id='lastName' name='lastName' placeholder='Apellidos' required />
             </div>
-            <label><input style={{ marginTop: '24px' }} type='radio' name='option' value='option1' />¿Guardar como visitante frecuente?</label>
-            <button style={{ marginTop: '24px' }} type='submit' className='button button__submit'>Entrar</button>
+
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              <label><input style={{ marginTop: '24px' }} type='checkbox' name='option' value='option1' />¿Guardar como visitante frecuente?</label>
+              <button style={{ marginTop: '24px' }} type='submit' className='button button__submit'>Registrar</button>
+            </div>
           </form>
         </div>
 
