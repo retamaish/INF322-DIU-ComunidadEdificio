@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import { H1, H2, P } from '@components'
 import { useNavigate } from 'react-router-dom'
 
@@ -6,12 +6,12 @@ export const FAQ = () => {
   // Frequently Asked Questions (FAQ)
   const navigate = useNavigate()
 
-  const[msj,setmsj] = useState('')
+  const [msj, setmsj] = useState('')
   const handleChange = (e) => {
     setmsj(e.target.value)
   }
   const handleQuery = () => {
-    alert(`Mensaje enviado al Administrador: ${msj}`)
+    window.alert(`Mensaje enviado al Administrador: ${msj}`)
   }
   return (
     <div className='faq'>
@@ -32,19 +32,20 @@ export const FAQ = () => {
             width: '80%',
             padding: '10px',
             marginBottom: '24px',
-            boxSizing: 'border-box',
+            boxSizing: 'border-box'
           }}
           placeholder='Problemas con luz, disponibilidad,etc.'
           value={msj}
           onChange={handleChange}
         />
         <div className='all-containter' style={{ display: 'flex', gap: '2rem', justifyContent: 'center' }}>
-          <button 
-          style={{ marginTop: '24px' }} 
-          type='submit' 
-          className='button button__submit'
-          onClick={()=>handleQuery()}
-          >Enviar Consulta</button>
+          <button
+            style={{ marginTop: '24px' }}
+            type='submit'
+            className='button button__submit'
+            onClick={() => handleQuery()}
+          >Enviar Consulta
+          </button>
           <button style={{ marginTop: '24px' }} type='submit' className='button button__submit' onClick={() => navigate('/')}>Volver a inicio</button>
         </div>
       </form>

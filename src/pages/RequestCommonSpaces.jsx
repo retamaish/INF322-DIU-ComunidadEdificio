@@ -1,25 +1,49 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { H1, H2 } from '@components'
 import { useNavigate } from 'react-router-dom'
 import ImageBarbecue from '../assets/barbecue.jpg'
 import ImageGym from '../assets/gym.jpg'
 
 export const RequestCommonSpaces = () => {
-  const navigate = useNavigate();
+  const navigate = useNavigate()
+  const [commonSpace, setCommonSpace] = useState('')
+  const [hour, setHour] = useState('')
 
   // Definimos las horas y las horas disponibles para habilitar/deshabilitar
   const hours = Array.from({ length: 15 }, (_, i) => {
-    const hour = (i + 8).toString().padStart(2, '0'); // 15 horas desde 8 hasta 22
-    return `${hour}:00`;
-  });
-  const availableHours = ['08:00', '10:00', '14:00', '16:00', '18:00']; // Horarios habilitados
-  const handleSubmit = () => {
-    alert('Espacio Reservado con exito.')
+    const first = (i + 8).toString().padStart(2, '0') // 15 horas desde las 08:00
+    const end = (i + 10).toString().padStart(2, '0')
+
+    return `${first}:00-${end}:00`
+  })
+
+  const availableHoursBBQ = ['08:00-10:00', '10:00-12:00', '14:00-16:00', '16:00-18:00', '18:00-20:00']
+  const availableHoursGym = ['14:00-16:00', '18:00-20:00']
+
+  const getAvailableHours = (commonSpace) => {
+    if (commonSpace === 'bbq') {
+      return availableHoursBBQ
+    } else if (commonSpace === 'gym') {
+      return availableHoursGym
+    }
+
+    return ['Seleccione un espacio común']
   }
+  const handleCommonSpaceClicked = (value) => {
+    const selectedCommonSpace = value
+    setCommonSpace(selectedCommonSpace)
+
+    const availableHours = getAvailableHours(selectedCommonSpace)
+    setHour(availableHours.length > 0 ? availableHours[0] : '')
+  }
+
+  const handleSubmit = () => {
+    window.alert(`Espacio Reservado con exito. ${commonSpace}`)
+  }
+
   return (
     <div className='request-space' style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <H1>Solicita tu espacio:</H1>
-
       {/* Formulario de selección */}
       <div className='request-space__form-container' style={{ display: 'flex', gap: '2rem', justifyContent: 'center' }}>
         <div className='request-space__options'>
@@ -28,7 +52,7 @@ export const RequestCommonSpaces = () => {
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
             <img src={ImageBarbecue} style={{ width: '100px', height: 'auto' }} />
             <label style={{ marginLeft: '8px' }}>
-              <input type='radio' name='opcion' value='quincho' />
+              <input type='radio' name='opcion' value='bbq' onChange={(e) => handleCommonSpaceClicked(e.target.value)} />
             </label>
             <div className='request-space__details'>
               <H2 className='request-space__subtitle'>Quincho</H2>
@@ -40,7 +64,7 @@ export const RequestCommonSpaces = () => {
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
             <img src={ImageGym} style={{ width: '100px', height: 'auto' }} />
             <label style={{ marginLeft: '8px' }}>
-              <input type='radio' name='opcion' value='gimnasio' />
+              <input type='radio' name='opcion' value='gym' onChange={(e) => handleCommonSpaceClicked(e.target.value)} />
             </label>
             <div className='request-space__details'>
               <H2 className='request-space__subtitle'>Gimnasio</H2>
@@ -54,28 +78,39 @@ export const RequestCommonSpaces = () => {
           <form className='form'>
             <div className='form__group'>
               <label className='form__label' htmlFor='hour'>Selecciona una hora:</label>
-              <select id='hour' name='hour' className='form__input' style={{ padding: '8px', width: '100%', marginTop: '8px' }}>
-                {hours.map((hour, index) => (
-                  <option
-                    key={index}
-                    value={hour}
-                    disabled={!availableHours.includes(hour)} // Deshabilita la opción si no está en availableHours
-                    style={{ color: availableHours.includes(hour) ? 'black' : 'gray' }} // Color según disponibilidad
-                  >
-                    {hour}
-                  </option>
-                ))}
+              <select
+                id='hour'
+                name='hour'
+                className='form__input'
+                style={{ padding: '8px', width: '100%', marginTop: '8px' }}
+                value={hour}
+                disabled={commonSpace === ''}
+                onChange={(e) => setHour(e.target.value)}
+              >
+                {commonSpace
+                  ? (hours.map((hour, index) => (
+                    <option
+                      key={index}
+                      value={hour}
+                      disabled={!getAvailableHours(commonSpace).includes(hour)} // Deshabilita la opción si no está en availableHours
+                      style={{ color: getAvailableHours(commonSpace).includes(hour) ? 'black' : 'gray' }}
+                    >
+                      {hour}
+                    </option>
+                    )))
+                  : <option>Selecciona un espacio común</option>}
               </select>
             </div>
 
             {/* Botones */}
             <div style={{ display: 'flex', gap: '1rem', marginTop: '24px' }}>
-              <button 
-              type='submit' 
-              className='button button__submit'
-              onClick={() => handleSubmit()}
-              >Solicitar</button>
-              
+              <button
+                type='submit'
+                className='button button__submit'
+                onClick={() => handleSubmit()}
+              >Solicitar
+              </button>
+
               <button
                 type='button'
                 className='button button__submit'
@@ -88,5 +123,5 @@ export const RequestCommonSpaces = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

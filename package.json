@@ -37,7 +37,8 @@
       "standard-jsx"
     ],
     "rules": {
-      "import/export": "off"
+      "import/export": "off",
+      "no-alert": "off"
     }
   },
   "browserslist": {

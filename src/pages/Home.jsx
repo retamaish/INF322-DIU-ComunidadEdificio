@@ -7,7 +7,7 @@ export const Home = () => {
   const navigate = useNavigate()
 
   const handlePay = () => {
-    alert('Redirigiendo al portal de pago...')
+    window.alert('Redirigiendo al portal de pago...')
   }
 
   return (
@@ -21,7 +21,7 @@ export const Home = () => {
           </P>
         </div>
         <div className='home__header__icons' style={{ display: 'flex', gap: '1rem' }}>
-          <div onClick={() => alert('Notificaciones')} style={{ cursor: 'pointer' }}>
+          <div onClick={() => window.alert('Notificaciones')} style={{ cursor: 'pointer' }}>
             <IconBell />
           </div>
           <div onClick={() => navigate('/usuario')} style={{ cursor: 'pointer' }}>

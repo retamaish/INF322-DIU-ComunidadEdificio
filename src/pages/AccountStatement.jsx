@@ -6,7 +6,7 @@ export const AccountStatement = () => {
   const navigate = useNavigate()
 
   const handleDownload = (type) => {
-    alert(`Descarga realizada: ${type}`)
+    window.alert(`Descarga realizada: ${type}`)
   }
 
   return (
