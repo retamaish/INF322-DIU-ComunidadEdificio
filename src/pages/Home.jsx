@@ -6,7 +6,9 @@ import { IconBell, IconUser, IconMenu } from '@icons'
 export const Home = () => {
   const navigate = useNavigate()
   const [menuOpen, setMenuOpen] = useState(false)
-
+  const handlePay = () => {
+    alert('Redirigiendo al portal de pago...')
+  }
   const handleMenuClick = () => {
     setMenuOpen(!menuOpen)
   }
@@ -67,7 +69,7 @@ export const Home = () => {
           <P>+ $0 intereses</P>
 
           <div className='home__top__buttons'>
-            <button className='button button__submit' style={{ width: '120px', marginRight: '10px' }}>Pagar</button>
+            <button className='button button__submit' style={{ width: '120px', marginRight: '10px' }} onClick={()=>handlePay()}>Pagar</button>
             <button className='button button__submit' style={{ width: '120px' }} onClick={() => navigate('/cartola')}>Ver detalle</button>
           </div>
         </div>
