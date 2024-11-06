@@ -33,7 +33,14 @@ export const RequestCommonSpaces = () => {
 
   const handleSubmit = () => {
     if (date && hour) {
-      window.alert(`Espacio reservado con éxito: ${commonSpace} el ${date} a las ${hour}`)
+      let prompt = ''
+      if (commonSpace === 'bbq') {
+        prompt = 'Se ha reservado el quincho'
+      } else if (commonSpace === 'gym') {
+        prompt = 'Se ha reservado el gimnasio'
+      } else { prompt = 'El espacio común seleccionado no es válido.' }
+
+      window.alert(`Espacio reservado con éxito: ${prompt} el día ${date} de ${hour.slice(0, 5)} a ${hour.slice(6, 11)}`)
     } else {
       window.alert('Por favor, selecciona una fecha y una hora')
     }
@@ -73,7 +80,7 @@ export const RequestCommonSpaces = () => {
         {/* Selección de Fecha y Hora */}
         <div className='request-space__time-selection' style={{ marginTop: '24px' }}>
           <form className='form' onSubmit={(e) => e.preventDefault()}>
-            
+
             {/* Selección de Fecha */}
             <div className='form__group'>
               <label className='form__label' htmlFor='date'>Selecciona una fecha:</label>
@@ -139,4 +146,3 @@ export const RequestCommonSpaces = () => {
     </div>
   )
 }
-
