@@ -41,7 +41,7 @@ export const Home = () => {
           <P>+ $0 intereses</P>
 
           <div className='home__top__buttons'>
-            <button className='button button__submit' style={{ width: '120px', marginRight: '10px' }} onClick={() => handlePay()}>Pagar</button>
+            <button className='button button__submit' style={{ width: '120px', marginRight: '10px' }} onClick={() =>navigate('/metodos-pago')}>Pagar</button>
             <button className='button button__submit' style={{ width: '120px' }} onClick={() => navigate('/cartola')}>Ver detalle</button>
           </div>
         </div>
