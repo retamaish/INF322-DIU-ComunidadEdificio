@@ -9,7 +9,7 @@ import {
   RequestCommonSpaces,
   UserData,
   AccountStatement,
-  PayMethods,
+  PayMethods
 } from '@pages'
 
 const Layout = () => {
@@ -25,7 +25,7 @@ const Layout = () => {
             <Route path='/preguntas-frecuentes' element={<FrequentlyAskedQuestions />} />
             <Route path='/usuario' element={<UserData />} />
             <Route path='/cartola' element={<AccountStatement />} />
-            <Route path='/metodos-pago' element={<PayMethods/>} />
+            <Route path='/metodos-pago' element={<PayMethods />} />
 
           </Routes>
         </div>

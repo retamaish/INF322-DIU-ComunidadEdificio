@@ -15,7 +15,8 @@ export const FAQ = () => {
   }
 
   return (
-    <div className='faq'
+    <div
+      className='faq'
       style={{
         display: 'flex',
         flexDirection: 'column',
@@ -26,7 +27,7 @@ export const FAQ = () => {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         height: '100vh',
-        transition: 'background-image 0.5s ease',
+        transition: 'background-image 0.5s ease'
       }}
     >
       <div
@@ -38,10 +39,10 @@ export const FAQ = () => {
           maxWidth: '800px',
           width: '100%',
           boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)', // Sombra para resaltar el cuadro
-          color:'black'
+          color: 'black'
         }}
       >
-        <H1 className='faq__title' style={{color:'black',}}>Preguntas frecuentes</H1>
+        <H1 className='faq__title' style={{ color: 'black' }}>Preguntas frecuentes</H1>
 
         <H2 className='faq__subtitle'>¿Cómo realizar pago en la app?</H2>
         <P className='faq__answer'>Debe ir al inicio, donde encontrará un botón para pagar en caso de que tus cuentas no estén al día.</P>
@@ -72,13 +73,15 @@ export const FAQ = () => {
               type='submit'
               className='button button__submit'
               onClick={() => handleQuery()}
-            >Enviar Consulta</button>
+            >Enviar Consulta
+            </button>
             <button
               style={{ marginTop: '24px' }}
               type='submit'
               className='button button__submit'
               onClick={() => navigate('/')}
-            >Volver a inicio</button>
+            >Volver a inicio
+            </button>
           </div>
         </form>
       </div>

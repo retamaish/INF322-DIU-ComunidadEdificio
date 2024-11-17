@@ -1,5 +1,5 @@
 export * from './AccountStatement'
-export * from './FAQ'
+export * from './faq'
 export * from './Home'
 export * from './Login'
 export * from './RegisterVisitors'

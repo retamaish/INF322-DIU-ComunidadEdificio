@@ -64,7 +64,7 @@ export const RequestCommonSpaces = () => {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         transition: 'background-image 0.5s ease',
-        height: '100vh',
+        height: '100vh'
       }}
     >
       {/* Cuadro de contenido */}
@@ -80,7 +80,7 @@ export const RequestCommonSpaces = () => {
           boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
           color: '#333',
           maxWidth: '600px',
-          width: '90%',
+          width: '90%'
         }}
       >
         <H1>Solicita tu espacio:</H1>

@@ -36,7 +36,8 @@ export const RegisterVisitors = () => {
   }
 
   return (
-    <div className='register-visitors'
+    <div
+      className='register-visitors'
       style={{
         color: 'black',
         display: 'flex',
@@ -47,16 +48,18 @@ export const RegisterVisitors = () => {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         height: '100vh',
-        transition: 'background-image 0.5s ease',
-      }}>
+        transition: 'background-image 0.5s ease'
+      }}
+    >
       <div style={{
         backgroundColor: 'rgba(255, 255, 255, 0.9)',
         padding: '30px',
         borderRadius: '8px',
         boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
         width: '90%',
-        maxWidth: '800px',
-      }}>
+        maxWidth: '800px'
+      }}
+      >
         <H1>Inscribe tu Visita</H1>
         <div className='register-visitors__container' style={{ display: 'flex', gap: '2rem' }}>
 
