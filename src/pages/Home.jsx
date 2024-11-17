@@ -7,8 +7,6 @@ import { IconBell, IconUser } from '@icons'
 export const Home = () => {
   const navigate = useNavigate()
 
-  
-
   return (
     <div
       className='home'
@@ -18,7 +16,7 @@ export const Home = () => {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         height: '100vh',
-        transition: 'background-image 0.5s ease',
+        transition: 'background-image 0.5s ease'
       }}
     >
       {/* Cuadro de contenido */}
@@ -34,7 +32,7 @@ export const Home = () => {
           boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
           color: '#333',
           maxWidth: '600px',
-          width: '90%',
+          width: '90%'
         }}
       >
         <div className='home__header' style={{ width: '100%' }}>
@@ -74,7 +72,7 @@ export const Home = () => {
 
         <hr />
 
-        <div className='home__mid' style={{ width: '100%'}}>
+        <div className='home__mid' style={{ width: '100%' }}>
           <H1 className='bold'>Reserva de espacio común</H1>
           <P>Revisa los espacios disponibles de tu condominio</P>
           <button className='button button__submit' onClick={() => navigate('reservar-espacios-comunes')} style={{ width: '120px' }}>Reservar</button>
