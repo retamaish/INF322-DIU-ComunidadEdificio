@@ -2,7 +2,8 @@ import React from 'react'
 import { H1, P, MenuDropdown } from '@components'
 import { useNavigate } from 'react-router-dom'
 import DefaultBackground from '../assets/stockphotobuilding.jpg'
-import { IconBell, IconUser } from '@icons'
+import NotificationsIcon from '@mui/icons-material/Notifications'
+import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 
 export const Home = () => {
   const navigate = useNavigate()
@@ -45,10 +46,10 @@ export const Home = () => {
           </div>
           <div className='home__header__icons' style={{ display: 'flex', gap: '1rem' }}>
             <div onClick={() => window.alert('Notificaciones')} style={{ cursor: 'pointer' }}>
-              <IconBell />
+              <NotificationsIcon />
             </div>
             <div onClick={() => navigate('/usuario')} style={{ cursor: 'pointer' }}>
-              <IconUser />
+              <AccountCircleIcon />
             </div>
             <MenuDropdown />
           </div>

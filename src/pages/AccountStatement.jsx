@@ -1,6 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import { IconDownload } from '@icons'
+import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined'
 
 export const AccountStatement = () => {
   const navigate = useNavigate()
@@ -31,7 +31,7 @@ export const AccountStatement = () => {
             <td>Gasto común, Agosto</td>
             <td>120.000</td>
             <td className='document-icon-cell'>
-              <IconDownload className='icon' aria-label='Descargar Documento' />
+              <FileDownloadOutlinedIcon className='icon' aria-label='Descargar Documento' />
             </td>
           </tr>
           <tr>
@@ -41,7 +41,7 @@ export const AccountStatement = () => {
             <td>Gasto común, Agosto</td>
             <td>120.000</td>
             <td className='document-icon-cell'>
-              <IconDownload className='icon' aria-label='Descargar Documento' />
+              <FileDownloadOutlinedIcon className='icon' aria-label='Descargar Documento' />
             </td>
           </tr>
           <tr>
@@ -51,7 +51,7 @@ export const AccountStatement = () => {
             <td>Gasto común, Agosto</td>
             <td>120.000</td>
             <td className='document-icon-cell'>
-              <IconDownload className='icon' aria-label='Descargar Documento' />
+              <FileDownloadOutlinedIcon className='icon' aria-label='Descargar Documento' />
             </td>
           </tr>
           <tr>
@@ -61,7 +61,7 @@ export const AccountStatement = () => {
             <td>Gasto común, Agosto</td>
             <td>120.000</td>
             <td className='document-icon-cell'>
-              <IconDownload className='icon' aria-label='Descargar Documento' />
+              <FileDownloadOutlinedIcon className='icon' aria-label='Descargar Documento' />
             </td>
           </tr>
           <tr>
@@ -71,7 +71,7 @@ export const AccountStatement = () => {
             <td>Gasto común, Agosto</td>
             <td>120.000</td>
             <td className='document-icon-cell'>
-              <IconDownload className='icon' aria-label='Descargar Documento' />
+              <FileDownloadOutlinedIcon className='icon' aria-label='Descargar Documento' />
             </td>
           </tr>
         </tbody>
@@ -81,13 +81,13 @@ export const AccountStatement = () => {
           className='download-button'
           onClick={() => handleDownload('PDF')}
         >
-          Descargar PDF <IconDownload className='icon' />
+          Descargar PDF <FileDownloadOutlinedIcon className='icon' />
         </button>
         <button
           className='download-button'
           onClick={() => handleDownload('Excel')}
         >
-          Descargar Excel <IconDownload className='icon' />
+          Descargar Excel <FileDownloadOutlinedIcon className='icon' />
         </button>
         <button className='download-button' onClick={() => navigate('/')}>
           Volver a Inicio

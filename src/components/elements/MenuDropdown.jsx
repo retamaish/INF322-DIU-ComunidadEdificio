@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { IconMenu } from '@icons'
+import MenuIcon from '@mui/icons-material/Menu'
 
 export const MenuDropdown = () => {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -17,7 +17,7 @@ export const MenuDropdown = () => {
 
   return (
     <div onClick={handleMenuClick} style={{ cursor: 'pointer', position: 'relative' }}>
-      <IconMenu />
+      <MenuIcon />
       {menuOpen && (
         <ul
           className='menu-dropdown'
