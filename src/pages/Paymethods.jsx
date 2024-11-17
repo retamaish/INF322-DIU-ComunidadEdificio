@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { H1, H2 } from '@components'
 import { useNavigate } from 'react-router-dom'
+import DefaultBackground from '../assets/stockphotobuilding.jpg'
+
 
 export const PayMethods = () => {
     const navigate = useNavigate()
@@ -11,28 +13,32 @@ export const PayMethods = () => {
     const [bankAccount, setBankAccount] = useState('')
     const [selectedBank, setSelectedBank] = useState('')
 
-
     const handlePaymentSubmit = () => {
-    if (selectedMethod && accountHolder && bankAccount && rutHolder && selectedBank) {
-        window.alert(`Has seleccionado el método de pago: ${selectedMethod} \nTitular: ${accountHolder} \nCuenta: ${bankAccount}`)
-    } else {
-        window.alert('Por favor, completa todos los campos')
-    }
+        if (selectedMethod && accountHolder && bankAccount && rutHolder && selectedBank) {
+            window.alert(`Has seleccionado el método de pago: ${selectedMethod} \nTitular: ${accountHolder} \nCuenta: ${bankAccount}`)
+        } else {
+            window.alert('Por favor, completa todos los campos')
+        }
     }
     const availableBanks = ['BancoEstado', 'Banco Credito e Inversiones','Banco Santander','SantaMariaBANK']
-    
-    return (
-    <div
+       return (
+        <div        
         className='pay-methods'
         style={{
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        color: 'black'
+        color: 'black',
+        position: 'relative',
+        backgroundImage: `url(${DefaultBackground})`, // Ruta de la imagen de 
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        height: '100vh',
+        transition: 'background-image 0.5s ease',
         }}
-    >
-        <H1 className='pay-methods__title' style={{ color: 'white' }}>Métodos de Pago</H1> 
+        >
+        <H1 className='pay-methods__title'>Métodos de Pago</H1> 
 
         <div className='pay-methods__container' style={{ display: 'flex', gap: '2rem', width: '100%', maxWidth: '1200px' }}>
         {/* Elección de método de pago */}

@@ -7,16 +7,14 @@ import { IconBell, IconUser } from '@icons'
 export const Home = () => {
   const navigate = useNavigate()
 
-  const handlePay = () => {
-    window.alert('Redirigiendo al portal de pago...')
-  }
+  
 
   return (
     <div
       className='home'
       style={{
         position: 'relative',
-        backgroundImage: `url(${DefaultBackground})`, // Ruta de la imagen de fondo
+        backgroundImage: `url(${DefaultBackground})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         height: '100vh',
