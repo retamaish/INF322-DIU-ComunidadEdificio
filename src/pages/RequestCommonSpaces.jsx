@@ -145,8 +145,8 @@ export const RequestCommonSpaces = () => {
 
           {/* Botones */}
           <div style={{ display: 'flex', gap: '8px', marginTop: '16px' }}>
-            <button onClick={handleSubmit} style={{ padding: '10px 20px' }}>Solicitar</button>
-            <button onClick={() => navigate('/')} style={{ padding: '10px 20px' }}>Volver al inicio</button>
+            <button className='button button__submit' onClick={handleSubmit} style={{ padding: '10px 20px' }}>Solicitar</button>
+            <button className='button button__submit' onClick={() => navigate('/')} style={{ padding: '10px 20px' }}>Volver al inicio</button>
           </div>
         </div>
       </div>
