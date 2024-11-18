@@ -15,7 +15,7 @@ export const PayMethods = () => {
 
   const handlePaymentSubmit = () => {
     if (selectedMethod && accountHolder && bankAccount && rutHolder && selectedBank) {
-      window.alert(`Has seleccionado el método de pago: ${selectedMethod} \nTitular: ${accountHolder} \nCuenta: ${bankAccount}`)
+      window.alert('Armando, hemos recibido tu pago, muchas gracias por cancelar tus gastos comunes!')
     } else {
       window.alert('Por favor, completa todos los campos')
     }
