@@ -1,4 +1,5 @@
 export { default as Layout } from './layout'
 export * from './elements'
 export * from './typography'
-export * from './icons'
+export * from './sections'
+export * from './navbar'

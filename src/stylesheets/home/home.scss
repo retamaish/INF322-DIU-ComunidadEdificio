@@ -1,3 +1,48 @@
 .home {
     width: 100%;
+    
+    &__header {
+        display: flex;
+        flex-direction: row;
+        &__address {
+            width: 50%;
+        }
+
+        &__icons {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: end;
+            width: 50%;
+        }
+    }
+
+    &__bottom {
+        display: flex;
+        flex-direction: row;
+        
+        &__faq {
+            width: 50%;
+        }
+
+        &__visits {
+            width: 50%;
+        }
+    }
+
+    
+}
+
+.home_common_expenses{
+    width: 100%;
+    background-color: #fff;
+    box-shadow: rgba(196, 198, 207, 0.8) 0px 1px 2px;
+    padding: 20px;
+    border-radius: 4px;
+
+    &__buttons{
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
 }
