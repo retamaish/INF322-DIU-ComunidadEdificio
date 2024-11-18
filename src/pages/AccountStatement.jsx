@@ -4,10 +4,6 @@ import DefaultBackground from '../assets/stockphotobuilding.jpg'
 import { Navbar } from '@components'
 
 export const AccountStatement = () => {
-  const handleDownload = (type) => {
-    window.alert(`Descarga realizada: ${type}`)
-  }
-
   const handleDocumentDownload = () => {
     window.alert('Documento descargado')
   }
@@ -144,30 +140,7 @@ export const AccountStatement = () => {
             })}
           </tbody>
         </table>
-        <div
-          className='download-buttons'
-          style={{
-            display: 'flex',
-            justifyContent: 'space-around',
-            marginTop: '0rem'
-          }}
-        >
-          <button
-            className='download-button'
-            style={buttonStyle('#4d7aa7')}
-            onClick={() => handleDownload('PDF')}
-          >
-            Descargar PDF <FileDownloadOutlinedIcon className='icon' />
-          </button>
-          <button
-            className='download-button'
-            style={buttonStyle('#4d7aa7')}
-            onClick={() => handleDownload('Excel')}
-          >
-            Descargar Excel <FileDownloadOutlinedIcon className='icon' />
-          </button>
 
-        </div>
       </div>
     </div>
   )
@@ -189,16 +162,3 @@ const cellStyle = {
   padding: '0.75rem 1rem',
   textAlign: 'left'
 }
-
-const buttonStyle = (backgroundColor) => ({
-  backgroundColor,
-  color: '#fff',
-  border: 'none',
-  padding: '0.75rem 1.25rem',
-  margin: '0.5rem',
-  borderRadius: '6px',
-  cursor: 'pointer',
-  transition: 'background-color 0.3s ease',
-  display: 'flex',
-  alignItems: 'center'
-})
