@@ -41,7 +41,7 @@ export const LineChart = () => {
   }
 
   return (
-    <div style={{ width: '450px', height: 'auto', marginLeft: '10%' }}>
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '450px', height: '100%', marginLeft: '10%' }}>
       <Line id={1} data={chartData} options={options} />
     </div>
   )

@@ -2,6 +2,7 @@ import React from 'react'
 import { LineChart } from '../../../chart/LineChart'
 import { useNavigate } from 'react-router-dom'
 import { H1, P } from '@typography'
+import { PieChart } from '../../../chart/PieChart'
 
 export const HomeGoToCommonExpenses = () => {
   const navigate = useNavigate()
@@ -23,6 +24,7 @@ export const HomeGoToCommonExpenses = () => {
         </div>
       </div>
       <LineChart />
+      <PieChart />
     </div>
   )
 }
