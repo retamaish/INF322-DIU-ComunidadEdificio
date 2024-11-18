@@ -1,6 +1,7 @@
 import React from 'react'
 import { H1, P, MenuDropdown } from '@components'
 import { useNavigate } from 'react-router-dom'
+
 import DefaultBackground from '../assets/stockphotobuilding.jpg'
 import NotificationsIcon from '@mui/icons-material/Notifications'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
@@ -12,7 +13,7 @@ export const Home = () => {
     <div
       className='home'
       style={{
-        position: 'relative',
+        display: 'flex',
         backgroundImage: `url(${DefaultBackground})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
@@ -23,22 +24,23 @@ export const Home = () => {
       {/* Cuadro de contenido */}
       <div
         style={{
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
+          display: 'flex',
+          flexDirection: 'column',
           backgroundColor: 'rgba(255, 255, 255, 0.9)',
-          borderRadius: '8px',
-          padding: '20px',
-          boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+          borderRadius: '12px',
+          padding: '30px',
+          overflow: 'hidden',
+          boxShadow: '0 4px 6px rgba(0, 0.2, 0.2, 0.4)',
           color: '#333',
-          maxWidth: '600px',
-          width: '90%'
+          alignContent: 'center',
+          alignItems: 'center',
+          width: '100%',
+          margin: '2%'
         }}
       >
         <div className='home__header' style={{ width: '100%' }}>
           <div className='home__header__address'>
-            <P style={{ marginTop: 10, marginBottom: 10 }}>
+            <P style={{ marginTop: 2, marginBottom: 0 }}>
               Departamento 1234 Torre A
               <br />
               Comunidad Santa María
