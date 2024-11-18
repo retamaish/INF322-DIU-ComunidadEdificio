@@ -40,6 +40,8 @@
 }
 
 .home_common_expenses{
+    display: flex;
+    flex-direction: row;
     width: 100%;
     background-color: #fff;
     box-shadow: rgba(196, 198, 207, 0.8) 0px 1px 2px;
@@ -51,6 +53,17 @@
         flex-direction: row;
         gap: 10px;
     }
+
+    &__content{
+        display: flex;
+        flex-direction: row;
+    }
+
+    &_left {
+        display: flex;
+        flex-direction: column;
+    }
+    
 }
 
 .home_common-spaces{

@@ -30,7 +30,7 @@ export const Home = () => {
           alignContent: 'center',
           alignItems: 'center',
           width: '100%',
-          margin: '2%'
+          margin: '2.5%'
         }}
       >
         {/* Barra de navegación */}
