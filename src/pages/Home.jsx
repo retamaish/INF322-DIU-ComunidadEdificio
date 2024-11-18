@@ -46,7 +46,7 @@ export const Home = () => {
 
         <hr />
 
-        <div className='home__bottom' style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
+        <div className='home__bottom'>
           {/* Sección Izquierda */}
           <HomeGoToVisits />
 
