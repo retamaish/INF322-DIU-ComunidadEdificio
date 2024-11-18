@@ -10,7 +10,7 @@ export const LineChart = () => {
     labels: Data.map((data) => data.month),
     datasets: [
       {
-        label: 'Evolución de los gastos comunes',
+        label: 'Gasto común',
         data: Data.map((data) => data.ggcc),
         backgroundColor: [
           'rgba(75,192,192,1)',

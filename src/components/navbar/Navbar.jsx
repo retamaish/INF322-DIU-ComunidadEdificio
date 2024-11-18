@@ -1,5 +1,5 @@
 import React from 'react'
-import { MenuDropdown } from '@components'
+import { MenuDropdown, A } from '@components'
 import { P } from '@typography'
 import { useNavigate } from 'react-router-dom'
 
@@ -18,6 +18,7 @@ export const Navbar = () => {
         </P>
       </div>
       <div className='home__header__icons' style={{ display: 'flex', gap: '1rem' }}>
+        <P>¿Deseas contactar con tu administración? Hazlo <A href='preguntas-frecuentes'>acá</A></P>
         <div onClick={() => window.alert('Notificaciones')} style={{ cursor: 'pointer' }}>
           <NotificationsIcon />
         </div>

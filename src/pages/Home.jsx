@@ -1,6 +1,6 @@
 import React from 'react'
-import { Navbar, HomeGoToCommonExpenses, HomeGoToCommonSpaces, HomeGoToFAQ, HomeGoToVisits } from '@components'
-
+import { Navbar, HomeGoToCommonExpenses, HomeGoToCommonSpaces, HomeGoToVisits } from '@components'
+import { H1 } from '@typography'
 import DefaultBackground from '../assets/stockphotobuilding.jpg'
 
 export const Home = () => {
@@ -30,29 +30,25 @@ export const Home = () => {
           alignContent: 'center',
           alignItems: 'center',
           width: '100%',
-          margin: '2.5%'
+          margin: '1%'
         }}
       >
         {/* Barra de navegación */}
         <Navbar />
         <hr />
-
+        <H1 style={{ marginTop: '0', marginBottom: '8px', textAlign: 'left', width: '100%' }}>Inicio</H1>
         {/* Gastos comunes */}
         <HomeGoToCommonExpenses />
         <hr />
 
-        {/* Espacios comunes */}
-        <HomeGoToCommonSpaces />
+        <div className='home__mid'>
+          {/* Espacios comunes */}
+          <HomeGoToCommonSpaces />
 
-        <hr />
-
-        <div className='home__bottom'>
-          {/* Sección Izquierda */}
+          {/* Inscribe a tu visita */}
           <HomeGoToVisits />
-
-          {/* Sección Derecha */}
-          <HomeGoToFAQ />
         </div>
+        <hr />
       </div>
     </div>
   )
