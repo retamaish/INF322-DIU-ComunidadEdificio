@@ -1,11 +1,9 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
 import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined'
 import DefaultBackground from '../assets/stockphotobuilding.jpg'
+import { Navbar } from '@components'
 
 export const AccountStatement = () => {
-  const navigate = useNavigate()
-
   const handleDownload = (type) => {
     window.alert(`Descarga realizada: ${type}`)
   }
@@ -39,11 +37,12 @@ export const AccountStatement = () => {
           boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
           color: '#333',
           width: '80%',
-          maxWidth: '800px',
+          maxWidth: '1000px',
           margin: '2rem 0',
           overflow: 'hidden'
         }}
       >
+        <Navbar />
         <h1
           className='account-statement__title'
           style={{
@@ -78,11 +77,11 @@ export const AccountStatement = () => {
               if (index === 2) {
                 // Fila para "Reserva de Quincho" con cargo y abono separados
                 return (
-                  <>
+                  <React.Fragment key={2}>
                     <tr key={index} style={rowStyle}>
                       <td style={cellStyle}>05/11/24</td>
                       <td style={cellStyle}>120.000</td>
-                      <td style={cellStyle}></td>
+                      <td style={cellStyle} />
                       <td style={cellStyle}>Reserva de Quincho</td>
                       <td style={cellStyle}>120.000</td>
                       <td style={cellStyle} className='document-icon-cell'>
@@ -91,7 +90,7 @@ export const AccountStatement = () => {
                     </tr>
                     <tr style={rowStyle}>
                       <td style={cellStyle}>10/11/24</td>
-                      <td style={cellStyle}></td>
+                      <td style={cellStyle} />
                       <td style={cellStyle}>120.000</td>
                       <td style={cellStyle}>Abono Reserva de Quincho</td>
                       <td style={cellStyle}>0</td>
@@ -99,17 +98,17 @@ export const AccountStatement = () => {
                         <FileDownloadOutlinedIcon className='icon' aria-label='Descargar Documento' onClick={handleDocumentDownload} />
                       </td>
                     </tr>
-                  </>
+                  </React.Fragment>
                 )
               }
               // Fila para "Pago de Gastos Comunes" con cargo y abono
               if (index !== 3) {
                 return (
-                  <>
+                  <React.Fragment key={3}>
                     <tr key={index} style={rowStyle}>
                       <td style={cellStyle}>05/11/24</td>
                       <td style={cellStyle}>125.000</td>
-                      <td style={cellStyle}></td>
+                      <td style={cellStyle} />
                       <td style={cellStyle}>Pago de Gastos Comunes</td>
                       <td style={cellStyle}>125.000</td>
                       <td style={cellStyle} className='document-icon-cell'>
@@ -118,7 +117,7 @@ export const AccountStatement = () => {
                     </tr>
                     <tr style={rowStyle}>
                       <td style={cellStyle}>10/11/24</td>
-                      <td style={cellStyle}></td>
+                      <td style={cellStyle} />
                       <td style={cellStyle}>125.000</td>
                       <td style={cellStyle}>Abono Gastos Comunes</td>
                       <td style={cellStyle}>0</td>
@@ -126,15 +125,15 @@ export const AccountStatement = () => {
                         <FileDownloadOutlinedIcon className='icon' aria-label='Descargar Documento' onClick={handleDocumentDownload} />
                       </td>
                     </tr>
-                  </>
+                  </React.Fragment>
                 )
               }
 
               return (
                 <tr key={index} style={rowStyle}>
                   <td style={cellStyle}>15/11/24</td>
-                  <td style={cellStyle}></td>
-                  <td style={cellStyle}></td>
+                  <td style={cellStyle} />
+                  <td style={cellStyle} />
                   <td style={cellStyle}>Pago de Gastos Comunes</td>
                   <td style={cellStyle}>125.000</td>
                   <td style={cellStyle} className='document-icon-cell'>
@@ -150,7 +149,7 @@ export const AccountStatement = () => {
           style={{
             display: 'flex',
             justifyContent: 'space-around',
-            marginTop: '1.5rem'
+            marginTop: '0rem'
           }}
         >
           <button
@@ -167,13 +166,7 @@ export const AccountStatement = () => {
           >
             Descargar Excel <FileDownloadOutlinedIcon className='icon' />
           </button>
-          <button
-            className='download-button'
-            style={buttonStyle('#4d7aa7')}
-            onClick={() => navigate('/')}
-          >
-            Volver a Inicio
-          </button>
+
         </div>
       </div>
     </div>

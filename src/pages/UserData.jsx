@@ -1,44 +1,83 @@
 import React from 'react'
-import { H1, H3, P } from '@components'
+import { H1, P, Navbar } from '@components'
 import { useNavigate } from 'react-router-dom'
-import ImageUser from '../assets/user_default.jpg'
+
+import DefaultBackground from '../assets/stockphotobuilding.jpg'
+import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 
 export const UserData = () => {
   const navigate = useNavigate()
   return (
-    <div className='user-data' style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-      <H1>Datos del Usuario:</H1>
-      <div className='user-data__container' style={{ display: 'flex', gap: '2rem', justifyContent: 'center', alignItems: 'center' }}>
-        {/* Foto del usuario */}
-        <div className='user-data__image-container' style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '16px' }}>
-          <img className='user-data__image' src={ImageUser} alt='Usuario' style={{ width: '100px', height: 'auto' }} />
-        </div>
+    <div
+      style={{
+        display: 'flex',
+        backgroundImage: `url(${DefaultBackground})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        height: '100vh',
+        transition: 'background-image 0.5s ease'
+      }}
+    >
+      {/* Cuadro de contenido */}
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          backgroundColor: '#f2f3f4',
+          borderRadius: '12px',
+          padding: '30px',
+          overflow: 'hidden',
+          boxShadow: '0 4px 6px rgba(0, 0.2, 0.2, 0.1)',
+          color: '#333',
+          alignContent: 'center',
+          alignItems: 'center',
+          width: '100%',
+          margin: '2%'
+        }}
+      >
+        <Navbar />
+        <hr />
 
-        {/* Datos del usuario */}
-        <div className='user-data__info'>
-          <form className='form'>
-            <div className='form__group' style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              {/* Contenedor para cada par de nombre y dato */}
-              <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-                <H3>Nombre:</H3>
-                <P>Armando Casas</P>
-              </div>
-
-              <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-                <H3>Departamento:</H3>
-                <P>Departamento 1234 - Torre A, Condominio Santa María</P>
-              </div>
-
-              <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-                <H3>Estado de Cuenta:</H3>
-                <P>Pagado</P>
-              </div>
+        <div className='user-data' style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <H1>Tu cuenta</H1>
+          <div className='user-data__container' style={{ display: 'flex', flexDirection: 'column', gap: '2rem', justifyContent: 'center', alignItems: 'center' }}>
+            {/* Foto del usuario */}
+            <div className='user-data__image-container' style={{ display: 'flex', alignItems: 'center' }}>
+              <AccountCircleIcon sx={{ fontSize: 150 }} />
             </div>
 
-            <div className='button-container' style={{ display: 'flex', gap: '2rem', marginTop: '24px', justifyContent: 'center' }}>
-              <button type='button' className='button button__submit' onClick={() => navigate('/')}>Volver al inicio</button>
+            {/* Datos del usuario */}
+            <div className='user-data__info'>
+              <form className='form'>
+                <div className='form__group' style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                  {/* Contenedor para cada par de nombre y dato */}
+                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+                    <P className='font-bold' style={{ margin: 0 }}>Nombre:</P>
+                    <P style={{ margin: 0 }}>Armando Casas Casas</P>
+                  </div>
+
+                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+                    <P className='font-bold' style={{ margin: 0 }}>Correo:</P>
+                    <P style={{ margin: 0 }}>usuario@usuario.com</P>
+                  </div>
+
+                  <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+                    <P className='font-bold' style={{ margin: 0 }}>RUT:</P>
+                    <P style={{ margin: 0 }}>12.345.678-9</P>
+                  </div>
+
+                </div>
+                <div className='user-data__buttons'>
+                  <div className='button-container' style={{ display: 'flex', gap: '2rem', marginTop: '24px', justifyContent: 'center' }}>
+                    <button type='button' className='button button__submit' onClick={() => window.alert('Función no implementada todavia')}>Editar perfil</button>
+                  </div>
+                  <div className='button-container' style={{ display: 'flex', gap: '2rem', marginTop: '24px', justifyContent: 'center' }}>
+                    <button type='button' className='button button__submit' onClick={() => navigate('/')}>Volver al inicio</button>
+                  </div>
+                </div>
+              </form>
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>

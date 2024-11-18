@@ -35,11 +35,11 @@ export const Home = () => {
       >
         {/* Barra de navegación */}
         <Navbar />
-        <hr />
+        <br />
         <H1 style={{ marginTop: '0', marginBottom: '8px', textAlign: 'left', width: '100%' }}>Inicio</H1>
         {/* Gastos comunes */}
         <HomeGoToCommonExpenses />
-        <hr />
+        <br />
 
         <div className='home__mid'>
           {/* Espacios comunes */}
@@ -48,7 +48,7 @@ export const Home = () => {
           {/* Inscribe a tu visita */}
           <HomeGoToVisits />
         </div>
-        <hr />
+        <br />
       </div>
     </div>
   )

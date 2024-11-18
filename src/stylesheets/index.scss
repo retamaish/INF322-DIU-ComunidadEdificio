@@ -7,6 +7,7 @@
 @use './home/index.scss' as Home;
 @use './menu-dropdown/index.scss' as MenuDropdown;
 @use './visitors/index.scss' as Visitors;
+@use './pages/index.scss' as Pages;
 
 html,
 body {
@@ -24,7 +25,10 @@ html,
 body,
 #root {
   height: 100%;
-  background-color: #272829;
+}
+
+hr{
+  width: 100%;
 }
 
 body {

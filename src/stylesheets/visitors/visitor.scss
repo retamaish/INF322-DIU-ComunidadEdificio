@@ -4,7 +4,7 @@
         flex-direction: row;
         margin-bottom: 15px;
         padding: 10px;
-        background-color: #49454F;
+        background-color: #fff;
         border-radius: 16px;
     }
 
@@ -32,9 +32,16 @@
 
     &-remove-button {
         margin-left: auto;
-        color: #ffffff;
-        background-color: #49454F;
+        color: #21005D;
+        background-color: #fff;
         border: 0;
         font-size: 18px;
     }
+}
+
+.register-visitors__container{
+    background-color: #f5f5f5;
+    box-shadow: rgba(196, 198, 207, 0.8) 0px 1px 2px;
+    padding: 20px;
+    border-radius: 8px;
 }

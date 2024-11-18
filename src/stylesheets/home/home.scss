@@ -5,7 +5,7 @@
         display: flex;
         flex-direction: row;
         &__address {
-            width: 50%;
+            width: 40%;
         }
 
         &__icons {
@@ -13,7 +13,7 @@
             flex-direction: row;
             align-items: center;
             justify-content: end;
-            width: 50%;
+            width: 60%;
         }
     }
 
