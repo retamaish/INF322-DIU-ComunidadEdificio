@@ -1,6 +1,6 @@
 import React from 'react'
 import { MenuDropdown, A } from '@components'
-import { P } from '@typography'
+import { H1, P } from '@typography'
 import { useNavigate } from 'react-router-dom'
 
 import NotificationsIcon from '@mui/icons-material/Notifications'
@@ -11,6 +11,7 @@ export const Navbar = () => {
   const navigate = useNavigate()
   return (
     <div className='home__header' style={{ width: '100%' }}>
+      <H1 className='home__header__title'>ComunidadEdificio</H1>
       <div className='home__header__address'>
         <P style={{ marginTop: 2, marginBottom: 0 }}>
           Departamento 1234 Torre A

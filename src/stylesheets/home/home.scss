@@ -4,7 +4,13 @@
     &__header {
         display: flex;
         flex-direction: row;
+        &__title {
+            width: auto;
+        }
         &__address {
+            display: flex;
+            align-items: center;
+            margin-left: 30px;
             width: 40%;
         }
 
