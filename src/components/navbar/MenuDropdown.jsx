@@ -25,7 +25,7 @@ export const MenuDropdown = () => {
           <li onClick={() => handleNavigateMenu('/usuario')} style={{ padding: '8px', cursor: 'pointer' }}>Tu hogar</li>
           <li onClick={() => handleNavigateMenu('/cartola')} style={{ padding: '8px', cursor: 'pointer' }}>Tu cartola</li>
           <li onClick={() => handleNavigateMenu('/inscribir-visitas')} style={{ padding: '8px', cursor: 'pointer' }}>Visitas</li>
-          <li onClick={() => handleNavigateMenu('/iniciar-sesion')} style={{ padding: '8px', cursor: 'pointer', color: 'red' }}>Cerrar Sesion</li>
+          <li onClick={() => handleNavigateMenu('/')} style={{ padding: '8px', cursor: 'pointer', color: 'red' }}>Cerrar Sesion</li>
         </ul>
       )}
     </div>
